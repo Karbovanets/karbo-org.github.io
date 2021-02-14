@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Payment ID Generator for Electronic Karbovanets - Ukrainian anonymous cryptocurrency and digital cash.">
+<title>Payment ID Generator - Decentralized Exchange Medium</title>
+
+<!-- ========================= CSS here ========================= -->
+<link rel="stylesheet" href="../assets/css/bootstrap-5.0.0-alpha.min.css">
+<link rel="stylesheet" href="../assets/css/glightbox.min.css">
+<link rel="stylesheet" href="../assets/css/animate.css">
+<link rel="stylesheet" href="../assets/css/main.css">
+
+<script src="https://kit.fontawesome.com/2058fca1c3.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-78493281-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<meta property="og:url" content="http://www.karbo.io" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Electronic Karbovanets" />
+<meta property="og:description" content="Karbo (Electronic Karbovanets) - digital exchange medium, algorithmic stablecoin" />
+<meta property="og:image" content="https://karbo.io/images/karbo_io.jpg" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1092" />
+<meta property="og:image:height" content="684" />
+
+<script src="https://kit.fontawesome.com/2058fca1c3.js"></script>
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1631255797202963',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ 
+
+<!--SUBPAGE HEAD-->
+
+<div class="subpage-head">
+  <div class="container">
+    <div class="section-title">
+      <h2>Payment ID Generator</h2>
+    </div>
+  </div>
+</div>
+
+<!-- // END SUBPAGE HEAD -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 has-margin-bottom">
+      <article class="page-content">
+		<div class="breath">
+			<p>Press the button to generate random PaymentID or enter Payment ID to decode it</p>
+			<div class="form-group">
+			  <input class="form-control input-lg" type="text" id="paymentid" maxlength="64">
+			</div>
+			<button onclick="generate()" class="btn btn-primary btn-lg">Generate PaymentID</button>
+			<button onclick="decode()" class="btn btn-primary btn-lg">Decode PaymentID</button>
+		</div>
+		<div class="breath">
+			<p>Enter short memo to encode it (ASCII only)</p>
+			<div class="form-group">
+			  <input class="form-control input-lg" type="text" id="text2encode" maxlength="32">
+			</div>
+			<button onclick="encode()" class="btn btn-primary btn-lg">Encode in PaymentID</button>		
+		</div>
+	
+		<div class="breath">
+			<div class="breath">
+				<p>Payment ID is optional transaction attachment that is usually used to identify transactions. Because of anonymity of Karbowanec transactions, without Payment ID you will not be able to distinguish them. You can generate random Payment IDs and give them to each user who is to send you some Karbo. This way you can tie payments to users.</p>
+			</div>
+		</div>
+      </article>
+    </div>
+    <!--// col md 12--> 
+  </div>  
+</div>   
+
+
+
+<!-- ========================= JS here ========================= -->
+<script src="../assets/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
+<script>
+function generate() {
+	function generateHexString(length) {
+  var ret = "";
+  while (ret.length < length) {
+	ret += Math.random().toString(16).substring(2);
+  }
+  return ret.substring(0,length);
+}
+// PaymentID
+ document.getElementById("paymentid").value = generateHexString(64);
+}
+
+function encode() {
+	var toenconde = document.getElementById("text2encode").value;
+	if (toenconde.length < 32) {
+		var padding = Array(32).join('0');
+		toenconde = pad(padding,toenconde,true);
+	}
+	document.getElementById("paymentid").value = a2hex(toenconde);
+}
+function decode() {
+	var decoded = hex2a(document.getElementById("paymentid").value);
+	document.getElementById("text2encode").value = decoded;
+}
+
+function pad(pad, str, padLeft) {
+  if (typeof str === 'undefined') 
+    return pad;
+  if (padLeft) {
+    return (pad + str).slice(-pad.length);
+  } else {
+    return (str + pad).substring(0, pad.length);
+  }
+}
+
+function a2hex(str) {
+  var arr = [];
+  for (var i = 0, l = str.length; i < l; i ++) {
+	var hex = Number(str.charCodeAt(i)).toString(16);
+	arr.push(hex);
+  }
+  return arr.join('');
+}
+
+function hex2a(hexx) {
+	var hex = hexx.toString();//force conversion
+	var str = '';
+	for (var i = 0; i < hex.length; i += 2)
+		str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+	return str;
+}
+</script>
+
+</body>
+</html>
