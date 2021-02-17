@@ -2463,7 +2463,7 @@ header {
         font-size: 22px; } }
   .footer .footer-widget ul.footer-links li a {
     color: #6A7C92;
-    display: block;
+    /*display: block;*/
     line-height: 35px;
     transition: all .3s; }
     .footer .footer-widget ul.footer-links li a:hover {

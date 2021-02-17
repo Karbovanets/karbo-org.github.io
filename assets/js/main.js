@@ -63,6 +63,7 @@
 		var iso = new Isotope(elem, {
 			// options
 			itemSelector: '.grid-item',
+			sortBy: 'random', // to make all partners equal
 			masonry: {
 				// use outer width of grid-sizer for columnWidth
 				columnWidth: '.grid-item'
