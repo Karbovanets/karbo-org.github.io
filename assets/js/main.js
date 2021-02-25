@@ -240,5 +240,43 @@
 	statsRefresh();
 	// Refresh every 300000
 	setInterval(statsRefresh, 300000);
+	
+	
+	// =============== localize =============== //
+	
+	function localize (language) {
+		document.querySelectorAll("[lang]").forEach((el) => {	
+			if (el.getAttribute("lang") == language) 
+				el.style.display = "unset";
+			else
+				el.style.display = "none";			
+		});
+	}
+
+	let lang = window.navigator.languages ? window.navigator.languages[0] : null;
+    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+
+	let shortLang = lang;
+	if (shortLang.indexOf('-') !== -1)
+		shortLang = shortLang.split('-')[0];
+
+	if (shortLang.indexOf('_') !== -1)
+		shortLang = shortLang.split('_')[0];
+	
+	let langSelector = document.getElementById('language_selector');
+	langSelector.onchange = function() {
+		localize(langSelector.options[langSelector.selectedIndex].value);
+	}
+
+	localize(shortLang);
+	
+	var langOpts = langSelector.options;
+	for (var opt, j = 0; opt = langOpts[j]; j++) {
+		if (opt.value == shortLang) {
+			langSelector.selectedIndex = j;
+			break;
+		}
+	}
+
 
 })();

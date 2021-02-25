@@ -18,12 +18,12 @@ Index Of css
 /*===========================
     01. Common CSS
 ===========================*/
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html {
   scroll-behavior: smooth; }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #6A7C92;
@@ -253,7 +253,7 @@ p {
     opacity: 0; } }
 
 /*===== All Section Title Style =====*/
-.section-title span {
+.section-title > span {
   font-size: 25px;
   font-weight: 700;
   color: #3763EB;
@@ -1624,6 +1624,7 @@ header {
 
 .clip-text {
   font-size: 25.5vw;
+  font-weight: 900;
   line-height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2523,3 +2524,14 @@ header {
       .footer-social-links ul li a:hover {
         background: linear-gradient(#3763eb 0%, #14B0FD 100%);
         color: #fff; }
+
+/*===========================
+    14. Language
+===========================*/
+
+[lang] {
+  display: none;
+}
+[lang=en] {
+  display: unset;
+}
