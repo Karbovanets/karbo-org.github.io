@@ -27,11 +27,9 @@
 			header_navbar.classList.remove("sticky");
 		}
 
-
-
 		// show or hide the back-top-top button
 		var backToTo = document.querySelector(".scroll-top");
-		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+		if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
 			backToTo.style.display = "block";
 		} else {
 			backToTo.style.display = "none";
