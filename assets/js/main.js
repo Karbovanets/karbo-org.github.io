@@ -267,6 +267,11 @@
 	langSelector.onchange = function() {
 		localize(langSelector.options[langSelector.selectedIndex].value);
 	}
+	
+	let langs = ["en", "de", "es", "pl", "uk", "ru", "cn", "jp", "kr"];
+	if (!langs.includes(shortLang)) {
+		shortLang = en;
+	}
 
 	localize(shortLang);
 	
