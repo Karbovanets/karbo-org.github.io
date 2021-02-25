@@ -139,6 +139,10 @@ p {
       font-size: 16px;
       line-height: 26px; } }
 
+button span {
+    pointer-events: none;
+}
+
 .img-bg {
   background-position: center center;
   background-size: cover;
