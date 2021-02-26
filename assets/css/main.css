@@ -2569,6 +2569,12 @@ header {
 	color: #222;
 }
 
+.footer .donate p small,
+.footer .donate p {
+	font-size: 12px;
+	line-height: 14px;
+}
+
 /*===========================
     14. Language
 ===========================*/
