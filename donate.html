@@ -1,61 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <!-- Meta, title, CSS, favicons, etc. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Download wallets for Karbo - Cryptographic Digital Exchange Medium - p2p exchange network">
+
 <title>Support Karbo - donate for development and other expenses</title>
 
-<link rel="alternate" href="/" hreflang="x-default" />
-<link rel="alternate" href="/ua/" hreflang="uk_UA" />
-<link rel="alternate" href="/ru/" hreflang="ru_RU" />
-<link rel="alternate" href="/pl/" hreflang="pl_PL" />
-<link rel="alternate" href="/es/" hreflang="es_ES" />
-<link rel="alternate" href="/cn/" hreflang="zh_CN" />
-<link rel="alternate" href="/jp/" hreflang="ja_JP" />
-<link rel="alternate" href="/kr/" hreflang="ko_KR" />
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+<link rel="icon" type="image/icon" href="favicon.ico" >
+		
 
-<!-- Bootstrap core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- ========================= CSS here ========================= -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet" href="assets/css/main.css">
 
-<!-- Karbo CSS -->
-<link href="/css/karbo.css" rel="stylesheet">
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-<![endif]-->
-
-<!-- Favicons -->
-<link rel="shortcut icon" href="images/favicon.ico">
-<link rel="icon" type="image/icon" href="/images/favicon.ico" >
-<!-- Custom Google Font -->
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,200i,300,300i,400,400i,700,700i,900,900i&amp;subset=cyrillic,latin-ext" rel="stylesheet">
-
+<script src="https://kit.fontawesome.com/2058fca1c3.js"></script>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-78493281-1', 'auto');
-  ga('send', 'pageview');
-
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+	ga('create', 'UA-78493281-1', 'auto');
+	ga('send', 'pageview');
 </script>
 
-<meta property="og:url" content="http://www.karbo.io" />
+<meta property="og:url" content="http://www.karbo.org" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Karbo" />
-<meta property="og:description" content="Karbo (Electronic Karbovanets) - digital exchange medium, algorithmic stablecoin" />
-<meta property="og:image" content="https://karbo.io/images/karbo_io.jpg" />
+<meta property="og:title" content="Electronic Karbovanets" />
+<meta property="og:description" content="Karbo (Electronic Karbovanets) - digital exchange medium with enhanced privacy and fungibility" />
+<meta property="og:image" content="assets/img/karbo.jpg" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1092" />
 <meta property="og:image:height" content="684" />
-
-<script src="https://kit.fontawesome.com/2058fca1c3.js"></script>
 
 <style>
 .address_string {
@@ -66,263 +47,417 @@
     -moz-user-select: text;
     -ms-user-select: all;
 	word-break: break-all;
+	color: #222;
 }
 </style>
 
 </head>
 <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1631255797202963',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+        <!-- ========================= preloader start ========================= -->
+            <div class="preloader">
+                <div class="loader">
+                    <div class="ytp-spinner">
+                        <div class="ytp-spinner-container">
+                            <div class="ytp-spinner-rotator">
+                                <div class="ytp-spinner-left">
+                                    <div class="ytp-spinner-circle"></div>
+                                </div>
+                                <div class="ytp-spinner-right">
+                                    <div class="ytp-spinner-circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- preloader end -->
 
-<!-- Fixed navbar -->
-    <div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">
-			<span id="coinIcon">
-				<img src="/images/logo.svg" />
-			</span> <strong>Karbo</strong></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-			  <a href="/download">Download</a>
-			</li>
-			<li>
-			  <a href="https://wallet.karbo.org/">Web Wallet</a>
-			</li>
-			<li>
-              <a href="/use">Use</a>
-            </li>
-			<li>
-              <a href="/pay">Pay</a>
-            </li>
-			<li>
-              <a href="/info">Info</a>
-            </li>
-			<li>
-              <a href="https://explorer.karbo.io/">Explorer</a>
-            </li>
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language" aria-hidden="true"></i> <span class="caret"></span></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="/"><span class="flag-icon flag-icon-us"></span> English</a></li>
-				<li><a href="/ua/"><span class="flag-icon flag-icon-ua"></span> Українська</a></li>
-				<li><a href="/ru/"><span class="flag-icon flag-icon-ru"></span> Русский</a></li>
-				<li><a href="/pl/"><span class="flag-icon flag-icon-pl"></span> Polski</a></li>
-				<li><a href="/es/"><span class="flag-icon flag-icon-es"></span> Español</a></li>
-				<li><a href="/cn/"><span class="flag-icon flag-icon-cn"></span> 简体中文</a></li>
-				<li><a href="/jp/"><span class="flag-icon flag-icon-jp"></span> 日本語</a></li>
-				<li><a href="/kr/"><span class="flag-icon flag-icon-kr"></span> 한국어</a></li>
-			  </ul>
-			</li>
-			<li class="dropdown">
-			<a href="#" class="price dropdown-toggle" data-toggle="dropdown"><span id="usd_price"></span> <span id="arrowplace"></span> <span class="caret"></span></a>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#calc" id="btc_price"></a></li>
-				<li><a href="#calc" id="cny_price"></a></li>
-				<li><a href="#calc" id="eur_price"></a></li>
-				<li><a href="#calc" id="jpy_price"></a></li>
-				<li><a href="#calc" id="krw_price"></a></li>
-				<li><a href="#calc" id="rur_price"></a></li>
-				<li><a href="#calc" id="uah_price"></a></li>
-			</ul>
-			</li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-   </div>
-<!--// Navbar Ends-->
+        <!-- ========================= header start ========================= -->
+        <header class="header navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                <img src="assets/img/logo/logo.svg" alt="Logo">
+								
+								<span lang="en">Karbo</span>
+								<span lang="de">Karbo</span>
+								<span lang="uk">Карбованець</span>
+								<span lang="ru">Карбованец</span>
+								<span lang="pl">Karbowaniec</span>
+								<span lang="es">Karbo</span>
+								<span lang="cn">卡博币</span>
+								<span lang="jp">カルボ</span>
+								<span lang="kr">카르보</span>
+								
+								<sup>Est. 2016</sup>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
 
-<div class="wrapper"></div>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a href="/#about">
+											<span lang="en">About</span>
+											<span lang="de">Über</span>
+											<span lang="uk">Інфо</span>
+											<span lang="ru">Инфо</span>
+											<span lang="pl">Info</span>
+											<span lang="es">Sobre</span>
+											<span lang="cn">信息</span>
+											<span lang="jp">情報</span>
+											<span lang="kr">정보</span>
+										</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/#partners">
+											<span lang="en">Use</span>
+											<span lang="de">Verwenden</span>
+											<span lang="uk">Використання</span>
+											<span lang="ru">Применение</span>
+											<span lang="pl">Użycie</span>
+											<span lang="es">Utilización</span>
+											<span lang="cn">用途</span>
+											<span lang="jp">応用</span>
+											<span lang="kr">적용</span>
+										</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://explorer.karbo.org/">
+											<span lang="en">Explorer</span>
+											<span lang="de">Explorer</span>
+											<span lang="uk">Оглядач</span>
+											<span lang="ru">Обозреватель</span>
+											<span lang="pl">Eksplorator</span>
+											<span lang="es">Observador</span>
+											<span lang="cn">评论员</span>
+											<span lang="jp">エクスプローラー</span>
+											<span lang="kr">관찰자</span>
+										</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://docs.karbo.org/">
+											<span lang="en">Docs</span>
+											<span lang="de">Dokumentation</span>
+											<span lang="uk">Документація</span>
+											<span lang="ru">Документация</span>
+											<span lang="pl">Dokumentacja</span>
+											<span lang="es">Documentación</span>
+											<span lang="cn">文献资料</span>
+											<span lang="jp">ドキュメンテーション</span>
+											<span lang="kr">선적 서류 비치</span>
+										</a>
+                                    </li>
+                                </ul>
+								
+								<select class="w-auto me-4 form-select" id="language_selector">
+								  <option value="en">English</option>
+								  <option value="de">Deutsch</option>
+								  <option value="uk">Українська</option>
+								  <option value="ru">Русский</option>
+								  <option value="pl">Polski</option>
+								  <option value="es">Español</option>
+								  <option value="cn">简体中文</option>
+								  <option value="jp">日本語</option>
+								  <option value="kr">한국어</option>
+								</select>
 
-<!--SUBPAGE HEAD-->
+								
+                                <div class="header-btn">
+                                    <a href="/#download" class="theme-btn">
+										<span lang="en">Get Started</span>
+										<span lang="de">Loslegen</span>
+										<span lang="uk">Розпочати</span>
+										<span lang="ru">Начать</span>
+										<span lang="pl">Zacznij</span>
+										<span lang="es">Empezar</span>
+										<span lang="cn">开始使用</span>
+										<span lang="jp">はじめに</span>
+										<span lang="kr">시작하다</span>
+									</a>
+                                </div>
+                            </div> <!-- navbar collapse -->
+                        </nav> <!-- navbar -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        
+        </header>
+        <!-- ========================= header end ========================= -->
 
-<div class="subpage-head grad breath inverse">
-  <div class="container">
-    <div class="section-title">
-		<h2>Support Karbo</h2>
-		<h4>Donate to support development, help us pay for hosting, promotions, listings etc.</h4>
-	</div>
-  </div>
-</div>
-
-<!-- // END SUBPAGE HEAD -->
-
-<div class="breath" style="height: 100%;">
-  <div class="container"> 
-		
-		<div class="row">
-			<div class="col-md-12 has-margin-bottom">
-				<article class="page-content breath">
-	
-					<p>Karbo was founded in 2016 as zero-premine, honest old-school coin, without ICO and for years at Karbo we sustain open source development, denying various proposals to make things like 'dev tax, organize 'post-premine' to some 'development fund' etc., which we believe will break Karbo's social contract.</p>
-					
-					<p>Instead we rely on Community help and support.
-					
-					As you may be aware, no one on the Karbo Dev Team is paid for work they do and generally anything that requires a payment comes from Dev Team member’s own funds and community donations.</p>
-					
-					<p>100% of the donations that we receive will be used only for Karbo related needs, for example:
-
-						<ul>
-							<li>Domain registrations</li>
-							<li>Hosting expenses and infrastructure maintenance (servers for web-wallets, explorers, APIs, seed nodes etc.)</li>
-							<li>Exchanges listing</li>
-							<li>Marketing and advertisement</li>
-							<li>Development assistance</li>
-						</ul>
-					</p>
-					
-					<p>Please help us and donate to the addresses below:</p>
-
-					<ul class="list-group">
-						<li class="list-group-item row">
-							<div class="col-md-1">KRB:</div>
-							<div class="col-md-3">
-								<div class="qrcode" id="qrcode_krb"></div>
+        <!--========================= about-section start========================= -->
+        <section id="donate" class="pt-200 pb-100">
+            <div class="container">
+				<div class="row">
+					<div class="col-xl-12 col-lg-12">
+						<div class="about-content-wrapper">
+							<div class="section-title text-center">
+								<span class="wow fadeInUp" data-wow-delay=".2s">
+									<span lang="en">Support Karbo</span>
+									<span lang="de">Support Karbo</span>
+									<span lang="es">Support Karbo</span>
+									<span lang="pl">Support Karbo</span>
+									<span lang="uk">Support Karbo</span>
+									<span lang="ru">Support Karbo</span>
+									<span lang="cn">Support Karbo</span>
+									<span lang="kr">Support Karbo</span>
+									<span lang="jp">Support Karbo</span>
+								</span>
+								<h2 class="mb-40 wow fadeInRight" data-wow-delay=".4s">
+									<span lang="en">Donate</span>
+									<span lang="de">Spenden</span>
+									<span lang="uk">Допомога проекту</span>
+									<span lang="ru">Пожертвования</span>
+									<span lang="pl">Darowizny</span>
+									<span lang="es">Donaciones</span>
+									<span lang="cn">捐款</span>
+									<span lang="jp">寄付</span>
+									<span lang="kr">기부</span>
+								</h2>
 							</div>
-							<div class="col-md-8">
-								<pre class="address_string" id="address_krb">Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3</pre>
-							</div>
+							<div class="about-content">
 							
-					  </li>
-					  <li class="list-group-item row">
-							<div class="col-md-1">BTC:</div>
-							<div class="col-md-3">
-								<div class="qrcode" id="qrcode_btc"></div>
+							
+								<p class="mb-45 wow text-center fadeInUp" data-wow-delay=".6s">Donate to support development, help us pay for hosting, promotions, listings etc.</p>
+								
+
+								<p>Karbo was founded in 2016 as zero-premine, honest old-school coin, without ICO and for years at Karbo we sustain open source development, denying various proposals to make things like 'dev tax, organize 'post-premine' to some 'development fund' etc., which we believe will break Karbo's social contract.</p>
+								
+								<p>Instead we rely on Community help and support.
+								
+								As you may be aware, no one on the Karbo Dev Team is paid for work they do and generally anything that requires a payment comes from Dev Team member’s own funds and community donations.</p>
+								
+								<p>100% of the donations that we receive will be used only for Karbo related needs, for example:
+
+									<ul>
+										<li>Domain registrations</li>
+										<li>Hosting expenses and infrastructure maintenance (servers for web-wallets, explorers, APIs, seed nodes etc.)</li>
+										<li>Exchanges listing</li>
+										<li>Marketing and advertisement</li>
+										<li>Development assistance</li>
+									</ul>
+								</p>
+								
+								<p>Please help us and donate to the address below:</p>
+
+								<div class="qrcode m-5" id="qrcode_krb"></div>
+								
+								<pre class="address_string m-5" id="address_krb">Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3</pre>
+								
+								If you want to donate in other currency or for specific needs, please contact us.
+
 							</div>
-							<div class="col-md-8">
-								<pre class="address_string" id="address_btc">1444y5HpV7UDKxYeDuB7MjEABgvhWWWd9B</pre>
-							</div>
-					  </li>
-					  <li class="list-group-item row">
-							<div class="col-md-1">XMR:</div>
-							<div class="col-md-3">
-								<div class="qrcode" id="qrcode_xmr"></div>
-							</div>
-							<div class="col-md-8">
-								<pre class="address_string" id="address_xmr">4AiWeKjAJ6KWUgr5TRHJHTAV5ZaeJ7kj8Kfb7bh9X3HA9KPCBWgp32Rd4J2Ho1zTeUQAQb2YZqTHRC3KTznzCt4oEnSbx7N</pre>
-							</div>
-					  </li>
-				  </ul>
-					
-					
-					If you want to donate in other currency or for specific needs, please contact us.
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--========================= donate-section end========================= -->
 
-				</article>
-			</div>
-		</div>
-  </div>
-</div>
+        <!-- ========================= footer start ========================= -->
+        <footer class="footer pt-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".4s">
+                            <h4>
+								<span lang="en">Useful links</span>
+								<span lang="de">Nützliche Links</span>
+								<span lang="uk">Корисні посилання</span>
+								<span lang="ru">Полезные ссылки</span>
+								<span lang="pl">Przydatne linki</span>
+								<span lang="es">Enlaces útiles</span>
+								<span lang="cn">有用的链接</span>
+								<span lang="jp">便利なリンク</span>
+								<span lang="kr">유용한 링크</span>
+							</h4>
+                            <ul class="footer-links">
+								<li class="nav-item">
+                                    <a href="https://explorer.karbo.org/">
+										<span lang="en">Explorer</span>
+										<span lang="de">Explorer</span>
+										<span lang="uk">Оглядач блокчейну</span>
+										<span lang="ru">Обозреватель блокчейна</span>
+										<span lang="pl">Explorator blockchain</span>
+										<span lang="es">Explorador de blockchain </span>
+										<span lang="cn">区块链资源管理器</span>
+										<span lang="jp">ブロックチェーンエクスプローラー</span>
+										<span lang="kr">블록 체인 탐색기</span>
+									</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://docs.karbo.org/">
+										<span lang="en">Documentation</span>
+										<span lang="de">Dokumentation</span>
+										<span lang="uk">Документація</span>
+										<span lang="ru">Документация</span>
+										<span lang="pl">Dokumentacja</span>
+										<span lang="es">Documentación</span>
+										<span lang="cn">文献资料</span>
+										<span lang="jp">ドキュメンテーション</span>
+										<span lang="kr">선적 서류 비치</span>
+									</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="https://wallet.karbo.org/">Web-wallet</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="https://pay.karbo.org/">Simple payment gateway (POS)</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="https://karbo.club/">E-commerce payment gateway</a>
+                                </li>
+								<li class="nav-item">
+                                    <a href="https://paymentid.karbo.org/">Payment ID generator</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".6s">
+                            <h4>
+								<span lang="en">Legal and Brand</span>
+								<span lang="de">Rechtliche Hinweise und Marke</span>
+								<span lang="uk">Юридична інформація та бренд</span>
+								<span lang="ru">Юридическая информация и бренд</span>
+								<span lang="pl">Informacje prawne i marka</span>
+								<span lang="es">Información legal y marca</span>
+								<span lang="cn">法律信息和品牌</span>
+								<span lang="jp">法的情報とブランド</span>
+								<span lang="kr">법률 정보 및 브랜드</span>
+							</h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="privacy-policy.html">
+										<span lang="en">Privacy policy</span>
+										<span lang="de">Datenschutz-Bestimmungen</span>
+										<span lang="uk">Політика конфіденційності</span>
+										<span lang="ru">Политика конфиденциальности</span>
+										<span lang="pl">Polityka prywatności</span>
+										<span lang="es">Confidencialidad</span>
+										<span lang="cn">机密性</span>
+										<span lang="jp">プライバシーポリシー</span>
+										<span lang="kr">개인 정보 보호 정책</span>
+									</a>
+                                </li>
+                                <li>
+                                    <a href="terms-and-conditions.html">
+										<span lang="en">Terms and conditions</span>
+										<span lang="de">Geschäftsbedingungen</span>
+										<span lang="uk">Правила та умови</span>
+										<span lang="ru">Условия и положения</span>
+										<span lang="pl">Regulamin</span>
+										<span lang="es">Condiciones</span>
+										<span lang="cn">条件</span>
+										<span lang="jp">利用規約</span>
+										<span lang="kr">이용 약관</span>
+									</a> 
+                                </li>
+                                <li>
+                                    <a href="donate.html">
+										<span lang="en">Donate</span>
+										<span lang="de">Spenden</span>
+										<span lang="uk">Допомога проекту</span>
+										<span lang="ru">Пожертвования</span>
+										<span lang="pl">Darowizny</span>
+										<span lang="es">Donaciones</span>
+										<span lang="cn">捐款</span>
+										<span lang="jp">寄付</span>
+										<span lang="kr">기부</span>
+									</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/Karbovanets/karbo-brand-media">
+										<span lang="en">Media kit</span>
+										<span lang="de">Medienkit (Werbematerial)</span>
+										<span lang="uk">Набір для медіа (рекламні матеріали)</span>
+										<span lang="ru">Набор для медиа (рекламные материалы)</span>
+										<span lang="pl">Zestaw prasowy (materiały promocyjne)</span>
+										<span lang="es">Equipo para medios (materiales de publicidad)</span>
+										<span lang="cn">宣传资料</span>
+										<span lang="jp">メディアキット（プロモーション資料）</span>
+										<span lang="kr">미디어 세트 (광고 자료)</span>
+									</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="offset-xl-1 offset-lg-1 col-xl-3 col-lg-3 col-md-6">
+                        <div class="footer-widget mb-60 wow fadeInRight" data-wow-delay=".8s">
+                            <h4>
+								<span lang="en">Contact</span>
+								<span lang="de">Kontakt</span>
+								<span lang="uk">Зв'язок</span>
+								<span lang="ru">Контакт</span>
+								<span lang="pl">Kontakt</span>
+								<span lang="es">Contacto</span>
+								<span lang="cn">接触</span>
+								<span lang="jp">連絡先</span>
+								<span lang="kr">접촉</span>
+							</h4>
+                            <ul class="footer-contact">
+                                <li>
+                                    <p>dev@karbo.io</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-<!-- FOOTER -->
-<footer class="grad1">
-   <div class="container">
-	 <div class="breath">
-        <div class="row">
-          <div class="col-lg-4">
-			<p>&copy; 2016-2019 <strong>Karbo</strong>. 
-		  
-			E-mail:&nbsp;dev@karbo.io</p>
-			
-			<div class="fb-like" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-		  </div>
-          <div class="col-lg-8">
-			<p  class="text-right">
-				<a href="/privacy">Privacy policy</a>
-				|
-				<a href="/terms">Terms and conditions</a> 
-				|
-				<a href="/donate">Donate</a>
-				|
-				<a href="http://forum.karbo.io/">Forum</a>
-			</p>
-		  </div>
-		</div>
-	 </div>
-  </div>
-</footer>
-<!-- END FOOTER -->
+                <div class="copyright-area">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                             <div class="footer-social-links">
+                                <ul class="d-flex">
+                                    <li><a href="https://www.facebook.com/karbo.io"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/krbcoin"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.reddit.com/r/krb/"><i class="fab fa-reddit-alien"></i></a></li>
+                                    <li><a href="https://t.me/karbowanec/"><i class="fab fa-telegram-plane"></i></a></li>
+                                    <li><a href="https://github.com/Karbovanets/"><i class="fab fa-github-alt"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="wow fadeInUp" data-wow-delay=".3s">&copy; 2016-2021 
+								<strong lang="en">Karbo</strong>
+								<strong lang="de">Karbo</strong>
+								<strong lang="uk">Карбованець</strong>
+								<strong lang="ru">Карбованец</strong>
+								<strong lang="pl">Karbowaniec</strong>
+								<strong lang="es">Karbo</strong>
+								<strong lang="cn">卡博币</strong>
+								<strong lang="jp">カルボ</strong>
+								<strong lang="kr">카르보</strong>
+							</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- ========================= footer end ========================= -->
 
-<!-- JS and analytics only. --> 
-<!-- Bootstrap core JavaScript
-================================================== --> 
-<script src="/js/jquery.js"></script> 
-<script src="/js/calc.js"></script> 
-<script src="/js/bootstrap.min.js"></script> 
-<script src="/js/easing.js"></script> 
-<script src="/js/isotope.pkgd.min.js"></script>
-<script src="/js/qrcode.js"></script> 
-<script>
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").classList.add("navbar-grad-reverse");
-  } else {
-    document.getElementById("navbar").classList.remove("navbar-grad-reverse");
-  }
-}
-</script>
-<script>
-$( document ).ready(function() {
-	$('.grid').isotope({
-	  itemSelector: '.software',
-	  percentPosition: true,
-	  masonry: {
-		// use outer width of grid-sizer for columnWidth
-		columnWidth: '.grid-sizer'
-	  }
-	});
-});
-</script>
-
-<!-- Scroll to Explore --> 
-<script>
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 60
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-</script>
-<script>
-$(function() {
-	new QRCode($("#qrcode_krb")[0],"karbowanec:"+$("#address_krb").text());
-	new QRCode($("#qrcode_btc")[0],"bitcoin:"+$("#address_btc").text());
-	new QRCode($("#qrcode_xmr")[0],"monero:"+$("#address_xmr").text());
-});
-</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css">
-
-</body>
+        <!-- ========================= scroll-top ========================= -->
+        <a href="#" class="scroll-top page-scroll" style="display: none;">
+            <i class="fas fa-long-arrow-alt-up"></i>
+        </a>
+ 
+		<!-- ========================= JS here ========================= -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="assets/js/count-up.min.js"></script>
+        <script src="assets/js/tiny-slider.js"></script>
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/imagesloaded.min.js"></script>
+		<script src="assets/js/qrcode.js"></script>
+		<script src="assets/js/donate.js"></script>
+    </body>
 </html>

@@ -283,5 +283,16 @@
 		}
 	}
 
+	// ============ donate qr code ============= //
+
+	var qrtxt = "karbowanec:"+document.getElementById('address_krb').textContent;
+	new  QRCode(document.getElementById("qrcode_krb"), {
+		text: qrtxt,
+		width: 150,
+		height: 150,
+		colorDark : "#000000",
+		colorLight : "#EFF2F9",
+		correctLevel : QRCode.CorrectLevel.H
+	});
 
 })();
