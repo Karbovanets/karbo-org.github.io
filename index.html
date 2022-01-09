@@ -737,128 +737,129 @@
 							<ul lang="en">
 								<li>Ticker: KRB</li>
 								<li>Symbol: Ҝ &ndash; Ka with vertical stroke, it is a letter of the Cyrillic script</li>
-								<li>Proof-of-work algorithm: CryptoNight</li>
+								<li>Proof-of-work algorithm: Signed yespower-blake256</li>
 								<li>Block time: 240 seconds</li>
 								<li>Difficulty: retarget each block</li>
-								<li>Block reward: slight decrease every block according to formula<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>12</sup></span><br/>
-									where MSupply is the number of atomic units and 'A' is amount of already generated coins
-								</li>
 								<li>Divisible up to: 10<sup>12</sup> atomic units (up to 12 decimal places)</li>
 								<li>Emission: infinite, initial supply &ndash; 10,000,000,000,000,000,000 atomic units, or 10&nbsp;million KRB</li>
-								<li>Tail emission: ~2% inflation per year</li>
+								<li>Tail emission: ~2% inflation p.a.</li>
+								<li>Block reward: slight change every block according to formula
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									where 'S' is initial supply, 'A' is amount of already generated coins,
+									'B' is est. nr of blocks p.a.
+								</li>
 							</ul>
 							<ul lang="de">
 								<li>Ticker: KRB</li>
 								<li>Symbol: Ҝ &ndash; Ka mit vertikalem Strich ist ein Buchstabe der kyrillischen Schrift</li>
-								<li>Proof-of-Work-Algorithmus: CryptoNight</li>
+								<li>Proof-of-Work-Algorithmus: Signed yespower-blake256</li>
 								<li>Blockierungszeit: 240 Sekunden </li>
 								<li>Schwierigkeit: jeden Block neu ausrichten</li>
-								<li>Blockbelohnung: Leichte Abnahme jedes Blocks gemäß Formel <br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>12</sup></span><br/>
-									Dabei ist MSupply die Anzahl der Atomeinheiten und 'A' die Anzahl der bereits generierten Münzen
-								</li>
 								<li>Teilbar bis: 10<sup>12</sup> Atomeinheiten (bis zu 12 Dezimalstellen)</li>
 								<li>Emission: unendlich, Erstversorgung &ndash; 10,000,000,000,000,000,000 Atomeinheiten oder 10&nbsp;Millionen KRB</li>
 								<li>Schwanzemission: ~ 2% Inflation pro Jahr</li>
+								<li>Blockbelohnung: Leichte Änderung jedes Blocks gemäß Formel
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									Dabei ist 'S' die Anzahl der Atomeinheiten und 'A' die Anzahl der bereits generierten Münzen, 'B' ist die geschätzte Anzahl der Blöcke p.a.
+								</li>
 							</ul>
 							<ul lang="pl">
 								<li>Ticker: KRB</li>
 								<li>Symbol: Ҝ &ndash; litera Ka cyrylicy z pionową kreską</li>
-								<li>Algorytm Proof-of-work: CryptoNight</li>
+								<li>Algorytm Proof-of-work: Signed yespower-blake256</li>
 								<li>Czas bloku: 240 sekund</li>
 								<li>Poziom trudności: ponownie w każdym bloku</li>
-								<li>Nagroda za blok: stopniowo zmniejsza się w każdym bloku wg formuły<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>18</sup></span><br/>
-									gdzie MSupply = ilość najmniejszych jednostek, 'A' - ilość już dobytych jednostek
-								</li>
 								<li>Podzielność na: 10<sup>12</sup> jednostek (do 12 znaków po przecinku)</li>
 								<li>Emisja: stała, początkowa ilość monet &ndash; 10,000,000,000,000,000,000 najmniejszych jednostek, lub 10 milionów KRB</li>
 								<li>Dodatkowa emisja: ~2% od początkowej ilości za rok</li>
+								<li>Nagroda za blok: stopniowo zmienia się w każdym bloku wg formuły
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									gdzie 'S' = ilość najmniejszych jednostek, 'A' - ilość już dobytych jednostek, 'B' to szacunkowa liczba bloków rocznie.
+								</li>
 							</ul>
 							<ul lang="es">
 								<li>Ticker: KRB</li>
 								<li>Symbol: Ҝ &ndash; Ka with vertical stroke, it is a letter of the Cyrillic script</li>
-								<li>Algoritmo Proof-of-work: CryptoNight</li>
+								<li>Algoritmo Proof-of-work: Signed yespower-blake256</li>
 								<li>Tiempo del bloque: 240 segundos</li>
 								<li>Nivel de complejidad: reorientación de cada bloque</li>
-								<li>Premio por el bloque: se disminuye levemente con cada bloque según formula<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>18</sup></span><br/>
-									MSupply - cantidad de las unidades más pequeñas, 'A' - cantidad de monedas ya ganadas
-								</li>
 								<li>Se divide por: 10<sup>12</sup>  unidades (hasta 12 signos después de coma)</li>
 								<li>Emisión: continuada, masa inicial de monedas &ndash; 10,000,000,000,000,000,000 de la unidades más pequeñas o 10 millones de KRB</li>
 								<li>Emisión adicional: ~2% de la masa inicial al año</li>
+								<li>Premio por el bloque: se cambio levemente con cada bloque según formula
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									'S' - cantidad de las unidades más pequeñas, 'A' - cantidad de monedas ya ganadas, 'B' - es el número estimado de bloques por año
+								</li>
 							</ul>
 							<ul lang="ru">
 								<li>Тикер: KRB</li>
 								<li>Символ: Ҝ &ndash; кириллическая буква Ка с вертикальным штрихом</li>
-								<li>Алгоритм Proof-of-work: CryptoNight</li>
+								<li>Алгоритм Proof-of-work: Signed yespower-blake256</li>
 								<li>Время блока: 240 секунд</li>
 								<li>Уровень сложности: перенацеливания каждого блока</li>
-								<li>>Награда за блок: плавно уменьшается с каждым блоком по формуле<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>12</sup></span><br/>
-									где MSupply = к-во наименьших единиц, 'A' - к-во уже добытых монет
-								</li>
 								<li>Делится на: 10<sup>12</sup> единиц (до 12 знаков после запятой)</li>
 								<li>Эмиссия: постоянная, начальная масса монет &ndash; 10,000,000,000,000,000,000 наименьших единиц, или 10 миллионов крб.</li>
 								<li>Дополнительная эмиссия: инфляция ~2% от начальной массы в год</li>
+								<li>>Награда за блок: плавно меняется с каждым блоком по формуле
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									где 'S' = к-во наименьших единиц, 'A' - к-во уже добытых монет, 'B' - расчетное количество блоков в год
+								</li>
 							</ul>
 							<ul lang="uk">
 								<li>Тікер: KRB</li>
 								<li>Символ: Ҝ &ndash; кирилична літера Ка з вертикальним штрихом</li>
-								<li>Алгоритм Proof-of-work: CryptoNight</li>
+								<li>Алгоритм Proof-of-work: Signed yespower-blake256</li>
 								<li>Час блоку: 240 секунд</li>
 								<li>Рівень складності: перенацілювання кожного блоку</li>
-								<li>Нагорода за блок: плавно зменшується кожного блоку за формулою<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>12</sup></span><br/>
-									де MSupply = к-ть найменших одиниць, 'A' - к-ть вже викарбуваних монет 
-								</li>
 								<li>Ділиться на: 10<sup>12</sup> одиниць (до 12 знаків після коми)</li>
 								<li>Емісія: постійна, початкова маса монет &ndash; 10,000,000,000,000,000,000 найменших одиниць, або 10 мільйонів крб.</li>
 								<li>Додаткова емісія: інфляція ~2% від початкової маси у рік</li>
+								<li>Нагорода за блок: плавно змінюється кожного блоку за формулою
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									де 'S' = к-ть найменших одиниць, 'A' - к-ть вже викарбуваних монет, 'B' - є оціночним числом блоків на рік
+								</li>
 							</ul>
 							<ul lang="cn">
 								<li>Ticker: KRB</li>
 								<li>象征: Ҝ &ndash; 带有垂直笔划的Ka，是西里尔字母的字母</li>
-								<li>Proof-of-work算法： CryptoNight</li>
+								<li>Proof-of-work算法： Signed yespower-blake256</li>
 								<li>一块的时间：240秒</li>
-								<li>难度水平：个块的重新瞄准/li>
-								<li>一块的奖金：按照数字公式平稳减低<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>18</sup></span><br/>
-									其中MSupply = 最小单位的总数，'A' = 已挖矿钱币的总数
-								</li>
+								<li>难度水平：个块的重新瞄准</li>
 								<li>可除：10<sup>12</sup>单位（至逗号后面的12单位）</li>
 								<li>发行：不断的，初步钱币总数：10,000,000,000,000,000,000个最小单位，就是千万个卡博币币。</li>
 								<li>补充发行：初步总数的~2%一年，一块最小的奖金为1个卡博币</li>
+								<li>一块的奖金：根据公式每块略有变化
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									其中'S' - 最小单位的总数，'A' - 已挖矿钱币的总数, 'B' - 是估计每年的块数
+								</li>
 							</ul>
 							<ul lang="jp">
 								<li>ティッカー: KRB</li>
 								<li>シンボル: Ҝ &ndash; 垂直ストロークのカ、キリル文字の文字です。</li>
-								<li>Proof-of-workアルゴリズム： CryptoNight</li>
+								<li>Proof-of-workアルゴリズム： Signed yespower-blake256</li>
 								<li>ブロック時間：240秒</li>
 								<li>難易度：各ブロックのターゲットを変更する</li>
-								<li>ブロックの報酬：方式に従って各ブロックの多少低下<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>18</sup></span><br/>
-									ここに「MSupply」は、最小単位の数、「A」は、すでに受けたコインの数です。
-								</li>
 								<li>可分：10<sup>12</sup>単位（小数点以下12桁まで）</li>
 								<li>エミッション：コインの一定の最初の量は、最小単位の10,000,000,000,000,000,000、または1,000万krbです。</li>
 								<li>追加エミッション：年間に当初量の~2%、ブロックの最低報酬は、1 krbです。</li>
+								<li>ブロックの報酬：方式に従って各ブロックをわずかに変更します
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									ここに「S」は、最小単位の数、「A」は、すでに受けたコインの数です、「B」年間の推定ブロック数です。
+								</li>
 							</ul>
 							<ul lang="kr">
 								<li>Ticker: KRB</li>
 								<li>Symbol: Ҝ &ndash; Ka with vertical stroke, it is a letter of the Cyrillic script.</li>
-								<li>알고리즘 Proof-of-work: CryptoNight</li>
+								<li>알고리즘 Proof-of-work: Signed yespower-blake256</li>
 								<li>블록 시간: 240초</li>
 								<li>복잡 수준: 각 블록의 목표 재설정</li>
-								<li>블록당 보상: 각 블록의 수식에 따라 조금씩 감소됩니다<br/>
-									<span class="text-secondary text-center">BaseReward = (MSupply - A)/2<sup>18</sup></span><br/>
-									MSupply = 가장 작은 단위로, 'A' –이미 수집된 동전
-								</li>
 								<li>나누기: 10<sup>12</sup> 단위 (쉼표 뒤에 최대 12자까지)</li>
 								<li>배출: 동전의 일정한 최초 질량- 최소 단위의 10,000,000,000,000,000,000 또는 1,000 만 krb. 추가</li>
 								<li>배출: 연간 초기 질량의~ 1.2 %임</li>
+								<li>블록당 보상: 각 블록의 수식에 따라 조금씩 약간 변경 
+									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
+									'S' - 가장 작은 단위로, 'A' – 이미 수집된 동전, 'B' - 연간 예상 블록 수
+								</li>
 							</ul>
 						</div>
 					</div>
