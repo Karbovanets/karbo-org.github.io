@@ -205,7 +205,7 @@
 
 	function statsRefresh() {
 		var request = new XMLHttpRequest();
-		request.open('GET', 'https://karbo.club/services/node_web/getinfo', true);
+		request.open('GET', 'https://node.karbo.org:32448/getinfo', true);
 
 		request.onload = function() {
 		  if (request.status >= 200 && request.status < 400) {
