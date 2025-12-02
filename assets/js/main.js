@@ -268,7 +268,7 @@
 		localize(langSelector.options[langSelector.selectedIndex].value);
 	}
 	
-	let langs = ["en", "de", "es", "pl", "uk", "ru", "cn", "jp", "kr"];
+	let langs = ["en", "pl", "uk"];
 	if (!langs.includes(shortLang)) {
 		shortLang = en;
 	}
