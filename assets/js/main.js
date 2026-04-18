@@ -205,7 +205,7 @@
 
 	function statsRefresh() {
 		var request = new XMLHttpRequest();
-		request.open('GET', 'https://karbo.club/services/node_web/getinfo', true);
+		request.open('GET', 'https://node.karbo.org:32448/getinfo', true);
 
 		request.onload = function() {
 		  if (request.status >= 200 && request.status < 400) {
@@ -268,7 +268,7 @@
 		localize(langSelector.options[langSelector.selectedIndex].value);
 	}
 	
-	let langs = ["en", "de", "es", "pl", "uk", "ru", "cn", "jp", "kr"];
+	let langs = ["en", "pl", "uk"];
 	if (!langs.includes(shortLang)) {
 		shortLang = en;
 	}
