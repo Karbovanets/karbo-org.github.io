@@ -1,1096 +1,1422 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title lang="en">Karbo - cryptocurrency - Decentralized Exchange Medium</title>
-        <title lang="uk">Електронний Карбованець - криптовалюта - децентралізований обмінний засіб</title>
-		<title lang="pl">Karbowaniec Cyfrowy - kryptowaluta - zdecentralizowany środek wymiany</title>
-		
-        <meta lang="en" name="description" content="Cryptographic Digital Exchange Medium - P2P Exchange Network or Cryptocurrency">
-		<meta lang="uk" name="description" content="Цифрова обмінна одиниця - P2P обмінна мережа або криптовалюта">
-		<meta lang="pl" name="description" content="Cyfrowa jednostka wymiany - sieć wymiany P2P lub kryptowaluta">
-		
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karbo — Electronic Karbovanets</title>
+  <script>document.documentElement.classList.add("is-loading");</script>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --paper:#ffffff;
+      --ink:#152238;
+      --muted:#5f6f86;
+      --line:#d7e0ee;
+      --navy:#0f223f;
+      --navy2:#142c52;
+      --navy3:#1b3e72;
+      --blue:#4d8dff;
+      --blue-soft:#bcd6ff;
+      --hero-text:#eef5ff;
+      --hero-muted:#c7d6eb;
+      --hero-line:rgba(255,255,255,.10);
+      --blue-ua: #005bbb;
+      --yellow-ua: #ffd500; 
+      --max:1280px;
+      --shadow:0 20px 60px rgba(15,34,63,.08);
+      --hero-shadow:0 40px 110px rgba(5,15,35,.28);
+      --display-serif:Georgia,"Times New Roman",serif;
+    }
 
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-        <link rel="icon" type="image/icon" href="favicon.ico" >
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.45;
+    }
+    a{text-decoration:none;color:inherit}
 
-		<!-- ========================= CSS here ========================= -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-		<link rel="stylesheet" href="assets/css/animate.css">
-		<link rel="stylesheet" href="assets/css/main.css">
-		
-        <script src="https://kit.fontawesome.com/2058fca1c3.js"></script>
-        
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-          
-            ga('create', 'UA-78493281-1', 'auto');
-            ga('send', 'pageview');
-          </script>
-          
-          <meta property="og:url" content="http://www.karbo.org" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Electronic Karbovanets" />
-          <meta property="og:description" content="Karbo (Electronic Karbovanets) - digital exchange medium with enhanced privacy and fungibility" />
-          <meta property="og:image" content="assets/img/karbo.jpg" />
-          <meta property="og:image:type" content="image/png" />
-          <meta property="og:image:width" content="1092" />
-          <meta property="og:image:height" content="684" />
-    </head>
-    <body class="main">
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+    body > .site-header{
+      transition:filter .78s ease, opacity .78s ease, transform .78s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease, color .22s ease, backdrop-filter .22s ease;
+      transform-origin:center top;
+    }
 
-        <!-- ========================= preloader start ========================= -->
-            <div class="preloader">
-                <div class="loader">
-                    <div class="ytp-spinner">
-                        <div class="ytp-spinner-container">
-                            <div class="ytp-spinner-rotator">
-                                <div class="ytp-spinner-left">
-                                    <div class="ytp-spinner-circle"></div>
-                                </div>
-                                <div class="ytp-spinner-right">
-                                    <div class="ytp-spinner-circle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    .hero-copy,
+    .hero-art,
+    .hero-stats,
+    section.block > .container,
+    body > .footer .container{
+      transition:filter .78s ease, opacity .78s ease, transform .78s ease;
+      transform-origin:center top;
+    }
+
+    html.is-loading body > .site-header,
+    html.is-loading .hero-copy,
+    html.is-loading .hero-art,
+    html.is-loading .hero-stats,
+    html.is-loading section.block > .container,
+    html.is-loading body > .footer .container{
+      filter:blur(16px);
+      opacity:.72;
+      transform:scale(1.012);
+    }
+
+    .container{
+      width:min(calc(100% - 40px), var(--max));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:50;
+      color:var(--hero-text);
+      background:transparent;
+      border-bottom:1px solid transparent;
+      transition:background-color .22s ease, border-color .22s ease, box-shadow .22s ease, color .22s ease, backdrop-filter .22s ease;
+    }
+
+    .site-header.is-scrolled{
+      color:var(--ink);
+      background:rgba(245,247,251,.82);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-bottom-color:rgba(21,34,56,.08);
+      box-shadow:0 12px 34px rgba(15,34,63,.08);
+    }
+
+    .ui,.nav-links,.brand-name,.hero-kicker,.hero-subtitle,.btn,.hero-stats small,.section-kicker,.wallet-card .label,.wallet-card .actions a,.specs li,.footer,.footer-kicker,.footer-links a{
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(238,245,255,.42);
+      box-shadow:none;
+      font-family:var(--display-serif);
+      font-size:23px;
+      font-weight:700;
+      color:currentColor;
+      transition:background-color .22s ease, border-color .22s ease, box-shadow .22s ease, color .22s ease;
+    }
+
+    .site-header.is-scrolled .brand-mark{
+      background:#fff;
+      border-color:var(--line);
+      box-shadow:0 6px 20px rgba(10,28,54,.06);
+      color:var(--navy);
+    }
+
+    .brand-mark:hover,
+    .site-header.is-scrolled .brand-mark:hover{
+      background:var(--blue-ua);
+      border-color:var(--blue-ua);
+      color:var(--yellow-ua);
+    }
+
+    .brand-name{
+      font-size:11px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:rgba(238,245,255,.78);
+      transition:color .22s ease;
+    }
+
+    .site-header.is-scrolled .brand-name{
+      color:var(--muted);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:28px;
+      font-size:14px;
+      color:rgba(238,245,255,.74);
+      transition:color .22s ease;
+    }
+
+    .nav-links a:hover{color:#fff}
+
+    .nav-links .nav-download{
+      min-height:42px;
+      padding:0 20px;
+      margin-left:2px;
+      border-radius:999px;
+      border:1px solid rgba(238,245,255,.22);
+      background:rgba(255,255,255,.10);
+      color:#eef5ff;
+      line-height:1;
+      box-shadow:none;
+      transition:transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease;
+    }
+
+    .nav-links .nav-download:hover,
+    .nav-links .nav-download:focus-visible{
+      color:#fff;
+      background:rgba(255,255,255,.16);
+      border-color:rgba(238,245,255,.34);
+      transform:translateY(-2px);
+      box-shadow:0 14px 34px rgba(5,15,35,.18);
+      outline:none;
+    }
+
+    .site-header.is-scrolled .nav-links{
+      color:var(--muted);
+    }
+
+    .site-header.is-scrolled .nav-links a:hover{color:var(--navy)}
+
+    .site-header.is-scrolled .nav-links .nav-download{
+      background:var(--navy);
+      border-color:var(--navy);
+      color:#eff5ff;
+      box-shadow:0 8px 22px rgba(15,34,63,.12);
+    }
+
+    .site-header.is-scrolled .nav-links .nav-download:hover,
+    .site-header.is-scrolled .nav-links .nav-download:focus-visible{
+      color:#fff;
+      background:#152d52;
+      border-color:#152d52;
+      box-shadow:0 14px 32px rgba(15,34,63,.2);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 76% 22%, rgba(77,141,255,.16), transparent 18%),
+        radial-gradient(circle at 80% 26%, rgba(255,255,255,.06), transparent 24%),
+        linear-gradient(180deg, #16345f 0%, #102544 52%, #0c1b33 100%);
+      color:var(--hero-text);
+    }
+
+    .hero::before{
+      content:none;
+    }
+
+    .hero::after{
+      content:attr(data-binary) " " attr(data-binary);
+      position:absolute;
+      top:92px;
+      right:max(20px, calc((100vw - var(--max)) / 2));
+      bottom:210px;
+      left:calc(50% + 10px);
+      z-index:0;
+      overflow:hidden;
+      color:rgba(239,246,255,.16);
+      font-family:"Courier New",Consolas,monospace;
+      font-size:11px;
+      line-height:2.15;
+      letter-spacing:.24em;
+      text-align:justify;
+      word-break:break-all;
+      opacity:.62;
+      mask-image:radial-gradient(ellipse at 50% 45%, #000 0 28%, rgba(0,0,0,.5) 48%, rgba(0,0,0,.16) 66%, transparent 88%);
+      -webkit-mask-image:radial-gradient(ellipse at 50% 45%, #000 0 28%, rgba(0,0,0,.5) 48%, rgba(0,0,0,.16) 66%, transparent 88%);
+      pointer-events:none;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:calc(100vh - 72px);
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items:center;
+      gap:20px;
+      padding:28px 0 0;
+    }
+
+    .hero-copy{
+      padding:0;
+      max-width:760px;
+    }
+
+    .hero-kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:#d6e4f8;
+      margin-bottom:26px;
+    }
+
+    h1{
+      margin:0;
+      font-family:var(--display-serif);
+      font-size:clamp(72px, 9vw, 132px);
+      line-height:.88;
+      letter-spacing:.01em;
+      font-weight:700;
+    }
+
+    .hero-subtitle{
+      margin-top:18px;
+      font-size:15px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:#d5e3f8;
+    }
+
+    .hero-lead{
+      margin:22px 0 0;
+      max-width:580px;
+      color:var(--hero-muted);
+      font-size:clamp(21px,2.2vw,28px);
+      line-height:1.55;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 24px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-size:14px;
+      transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .btn-primary{
+      background:#f3f8ff;
+      color:#0f223f;
+      box-shadow:var(--hero-shadow);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.08);
+      color:#edf5ff;
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .btn:hover,
+    .btn:focus-visible{
+      transform:translateY(-2px);
+      outline:none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible{
+      background:#fff;
+      box-shadow:0 46px 120px rgba(5,15,35,.34);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible{
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.28);
+      box-shadow:0 22px 54px rgba(5,15,35,.16);
+    }
+
+    .hero-art{
+      position:relative;
+      min-height:760px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .coin-cluster{
+      position:relative;
+      width:min(44vw, 630px);
+      aspect-ratio:1/1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .bubble{
+      position:absolute;
+      border-radius:50%;
+      background:transparent;
+      border:1px solid rgba(239,246,255,.22);
+      box-shadow:none;
+      filter:none;
+      animation-timing-function:linear;
+      animation-iteration-count:infinite;
+      transform-origin:50% 50%;
+    }
+
+    .bubble.one{
+      width:75%;
+      height:75%;
+      left:13%;
+      top:13%;
+      animation:spin0 30s linear infinite reverse;;
+      border:2px solid rgba(239, 246, 255, 0.4);
+      border-top-color: rgba(239, 246, 255);
+    }
+
+    .bubble.two{
+      width:74%;
+      height:74%;
+      left:13%;
+      top:13%;
+      animation-name:spinB;
+      animation-duration:24s;
+    }
+
+    .bubble.three{
+      width:74%;
+      height:74%;
+      left:13%;
+      top:13%;
+      animation-name:spinA;
+      animation-duration:18s;
+    }
+
+    .bubble.four{
+      width:74%;
+      height:74%;
+      left:13%;
+      top:13%;
+      animation-name:spinB;
+      animation-duration:34s;
+    }
+
+    .coin-glow{display:none;}
+
+    .coin-shade{display:none;}
+
+    .hero-symbol{
+      position:relative;
+      z-index:3;
+      display:inline-block;
+      font-family:var(--display-serif);
+      font-size:clamp(240px, 27vw, 400px);
+      line-height:.82;
+      font-weight:700;
+      color:transparent;
+      -webkit-text-stroke:2px rgba(239,246,255,.98);
+      text-stroke:2px rgba(239,246,255,.98);
+      text-shadow:none;
+      transform:none;
+    }
+
+    .hero-symbol::before,
+    .hero-symbol::after{
+      content:"Ҝ";
+      position:absolute;
+      inset:0;
+      color:transparent;
+      -webkit-text-stroke:1px rgba(239,246,255,.16);
+      text-stroke:1px rgba(239,246,255,.16);
+      pointer-events:none;
+      will-change:transform;
+    }
+
+    .hero-symbol::before{
+      animation:symbolDriftA 28s linear infinite;
+    }
+
+    .hero-symbol::after{
+      -webkit-text-stroke-color:rgba(239,246,255,.10);
+      text-stroke-color:rgba(239,246,255,.10);
+      animation:symbolDriftB 36s linear infinite;
+    }
+
+    .hero-stats{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      border-top:1px solid var(--hero-line);
+      border-bottom:1px solid var(--hero-line);
+      margin-top:-80px;
+      position:relative;
+      z-index:4;
+      background:rgba(8,18,35,.16);
+      backdrop-filter:blur(6px);
+    }
+
+    .stat{
+      min-height:152px;
+      padding:28px 30px 24px;
+      border-right:1px solid var(--hero-line);
+    }
+
+    .stat:last-child{border-right:none}
+
+    .stat small{
+      display:block;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#d3e2f6;
+      margin-bottom:18px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:clamp(32px,3vw,50px);
+      line-height:1;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:-.04em;
+    }
+
+    .stat span{
+      display:block;
+      margin-top:14px;
+      color:#aebfda;
+      font-size:16px;
+      line-height:1.55;
+    }
+
+    section.block{
+      padding:92px 0;
+      border-top:1px solid rgba(21,34,56,.08);
+    }
+
+    .section-intro{
+      max-width:920px;
+      margin-bottom:36px;
+    }
+
+    .section-kicker{
+      font-size:11px;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:#6a7d98;
+      margin-bottom:16px;
+    }
+
+    h2{
+      margin:0;
+      font-size:clamp(38px,5vw,66px);
+      line-height:.98;
+      letter-spacing:-.04em;
+      font-weight:700;
+      color:var(--navy);
+    }
+
+    .section-text{
+      margin-top:20px;
+      font-size:21px;
+      line-height:1.72;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#c3d3e8;
+      box-shadow:0 28px 80px rgba(15,34,63,.13);
+    }
+
+    .card h3,.wallet-card h3,.method-aside h3{
+      margin:0;
+      font-size:30px;
+      line-height:1.06;
+      letter-spacing:-.03em;
+      color:var(--navy);
+    }
+
+    .card p,.wallet-card p{
+      margin:16px 0 0;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.75;
+    }
+
+    .method{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:42px;
+      align-items:start;
+    }
+
+    .method p,.story p{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:20px;
+      line-height:1.78;
+    }
+
+    .heritage-quote{
+      margin:0 0 26px;
+      padding:4px 0 4px 24px;
+      border-left:3px solid #1b3e72;
+      color:#405674;
+      font-size:20px;
+      line-height:1.78;
+      font-style:normal;
+    }
+
+    .heritage-quote strong{
+      color:var(--navy);
+    }
+
+    .method-aside{
+      background:linear-gradient(180deg,#eef5ff,#ffffff);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    #spow{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(77,141,255,.16), transparent 22%),
+        linear-gradient(180deg, #102544 0%, #0b1a31 100%);
+      border-top:none;
+      color:var(--hero-text);
+    }
+
+    #spow .method{
+      grid-template-columns:.82fr 1.18fr;
+      gap:64px;
+      align-items:center;
+    }
+
+    #spow .section-kicker{
+      color:#9fb7d8;
+    }
+
+    #spow h2{
+      color:#f2f7ff;
+    }
+
+    #spow .spow-copy p,
+    #spow .method-aside p{
+      color:#c7d6eb;
+    }
+
+    #spow .spow-copy > p{
+      max-width:560px;
+    }
+
+    .spow-highlight{
+      max-width:440px;
+      margin-top:28px;
+      padding:20px 22px;
+      border-left:2px solid rgba(239,246,255,.52);
+      background:rgba(255,255,255,.06);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+    }
+
+    .spow-highlight p{
+      margin:0 0 10px;
+      color:#e5eefb;
+      font-size:18px;
+      line-height:1.64;
+    }
+
+    .spow-highlight p:last-child{
+      margin-bottom:0;
+    }
+
+    #spow .method-aside{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.12);
+      box-shadow:none;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+    }
+
+    #spow .method-aside p{
+      margin-top:0;
+    }
+
+    #spow em{
+      color:#fff;
+    }
+
+    .specs{
+      margin:18px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .specs li{
+      border-top:1px solid rgba(21,34,56,.08);
+      padding-top:12px;
+      color:#46607f;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .wallet-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+      margin-top:26px;
+    }
+
+    .wallet-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-height:320px;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .wallet-card:hover{
+      transform:translateY(-5px);
+      border-color:#c3d3e8;
+      box-shadow:0 30px 84px rgba(15,34,63,.14);
+    }
+
+    .wallet-card .label{
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#7291bf;
+      margin-bottom:14px;
+    }
+
+    .wallet-card p{flex:1}
+
+    .wallet-card .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .wallet-card .actions a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 16px;
+      border-radius:999px;
+      font-size:13px;
+      border:1px solid var(--line);
+      transition:transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+    }
+
+    .wallet-card .actions a.primary{
+      background:var(--navy);
+      color:#eff5ff;
+      border-color:var(--navy);
+    }
+
+    .wallet-card .actions a.secondary{
+      background:#f4f8ff;
+      color:var(--navy);
+    }
+
+    .wallet-card .actions a:hover,
+    .wallet-card .actions a:focus-visible{
+      transform:translateY(-2px);
+      outline:none;
+    }
+
+    .wallet-card .actions a.primary:hover,
+    .wallet-card .actions a.primary:focus-visible{
+      background:#152d52;
+      border-color:#152d52;
+      box-shadow:0 14px 34px rgba(15,34,63,.2);
+    }
+
+    .wallet-card .actions a.secondary:hover,
+    .wallet-card .actions a.secondary:focus-visible{
+      background:#fff;
+      border-color:#b8c9df;
+      box-shadow:0 12px 28px rgba(15,34,63,.1);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:.94fr 1.06fr;
+      gap:42px;
+      align-items:start;
+    }
+
+    .footer{
+      padding:70px 0 38px;
+      background:#08182e;
+      color:rgba(238,245,255,.78);
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-main{
+      display:grid;
+      grid-template-columns:minmax(240px,1.35fr) repeat(4,minmax(130px,1fr));
+      gap:38px;
+      align-items:start;
+    }
+
+    .footer-brand{
+      max-width:320px;
+    }
+
+    .footer-brand strong{
+      display:block;
+      color:#f3f8ff;
+      font-family:var(--display-serif);
+      font-size:28px;
+      font-weight:400;
+      letter-spacing:.02em;
+    }
+
+    .footer-brand p{
+      margin:14px 0 0;
+      color:rgba(238,245,255,.62);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .footer-kicker{
+      margin:0 0 18px;
+      color:#91a9c9;
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .footer-links ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:11px;
+    }
+
+    .footer-links a{
+      display:inline-flex;
+      color:rgba(238,245,255,.72);
+      font-size:14px;
+      line-height:1.35;
+      transition:color .18s ease, transform .18s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible{
+      color:#fff;
+      transform:translateX(3px);
+      outline:none;
+    }
+
+    .footer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:46px;
+      padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.10);
+      color:rgba(238,245,255,.58);
+      font-size:13px;
+    }
+
+    .footer-legal{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+    }
+
+    .footer-legal a{
+      color:rgba(238,245,255,.66);
+      transition:color .18s ease;
+    }
+
+    .footer-legal a:hover,
+    .footer-legal a:focus-visible{
+      color:#fff;
+      outline:none;
+    }
+
+    .footer .ua-badge{
+      color:rgba(238,245,255,.62);
+    }
+
+    .footer .ua-flag{
+      border-color:rgba(238,245,255,.25);
+    }
+
+    .ua-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .ua-flag {
+      display: flex;
+      flex-direction: column;
+      width: 22px;
+      height: 15px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .ua-flag-top { flex: 1; background: var(--blue-ua); }
+    .ua-flag-bot { flex: 1; background: var(--yellow-ua); }
+
+    @keyframes spin0{
+      from{transform:rotate(0deg) scaleX(1.00) scaleY(1.00)}
+      50%{transform:rotate(180deg) scaleX(1.00) scaleY(1.00)}
+      to{transform:rotate(360deg) scaleX(1.00) scaleY(1.00)}
+    }
+
+    @keyframes spinA{
+      from{transform:rotate(0deg) scaleX(1.00) scaleY(1.06)}
+      50%{transform:rotate(180deg) scaleX(1.05) scaleY(.98)}
+      to{transform:rotate(360deg) scaleX(1.00) scaleY(1.06)}
+    }
+
+    @keyframes spinB{
+      from{transform:rotate(360deg) scaleX(1.07) scaleY(.95)}
+      50%{transform:rotate(180deg) scaleX(.98) scaleY(1.05)}
+      to{transform:rotate(0deg) scaleX(1.07) scaleY(.95)}
+    }
+
+    /*@keyframes symbolDriftA{
+      0%,100%{transform:translate3d(0, -3px, 0)}
+      12.5%{transform:translate3d(3px, -2px, 0)}
+      25%{transform:translate3d(4px, 0, 0)}
+      37.5%{transform:translate3d(3px, 2px, 0)}
+      50%{transform:translate3d(0, 3px, 0)}
+      62.5%{transform:translate3d(-3px, 2px, 0)}
+      75%{transform:translate3d(-4px, 0, 0)}
+      87.5%{transform:translate3d(-3px, -2px, 0)}
+    }
+
+    @keyframes symbolDriftB{
+      0%,100%{transform:translate3d(2px, 3px, 0)}
+      12.5%{transform:translate3d(-1px, 4px, 0)}
+      25%{transform:translate3d(-4px, 2px, 0)}
+      37.5%{transform:translate3d(-5px, 0, 0)}
+      50%{transform:translate3d(-3px, -3px, 0)}
+      62.5%{transform:translate3d(0, -4px, 0)}
+      75%{transform:translate3d(4px, -2px, 0)}
+      87.5%{transform:translate3d(5px, 1px, 0)}
+    }*/
+
+    @media (max-width:1100px){
+      .hero-inner,.grid-3,.method,.wallet-grid,.two-col{
+        grid-template-columns:1fr;
+      }
+      #spow .method{
+        grid-template-columns:1fr;
+        gap:36px;
+      }
+      .hero-copy{
+        padding-top:28px;
+      }
+      .hero-art{
+        order:-1;
+        min-height:440px;
+      }
+      .coin-cluster{
+        width:min(72vw, 520px);
+      }
+      .hero-stats{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        margin-top:0;
+      }
+      .stat:nth-child(2){
+        border-right:none;
+      }
+      .stat:nth-child(-n+2){
+        border-bottom:1px solid var(--hero-line);
+      }
+      .footer-main{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+      .footer-brand{
+        grid-column:1/-1;
+        max-width:520px;
+      }
+    }
+
+    @media (max-width:760px){
+      .container{
+        width:min(calc(100% - 28px), var(--max));
+      }
+      .nav{
+        min-height:64px;
+        gap:12px;
+      }
+      .nav-links{
+        display:flex;
+        gap:10px;
+        font-size:12px;
+        margin-left:auto;
+      }
+      .brand{
+        gap:10px;
+      }
+      .brand-name{
+        font-size:10px;
+        letter-spacing:.2em;
+      }
+      .nav-links .nav-download{
+        min-height:36px;
+        padding:0 14px;
+      }
+      .hero-inner{
+        min-height:auto;
+        padding-top:12px;
+      }
+      .hero::after{
+        top:66px;
+        right:14px;
+        bottom:auto;
+        left:14px;
+        height:340px;
+      }
+      .hero-art{
+        min-height:320px;
+      }
+      .coin-cluster{
+        width:min(86vw, 390px);
+      }
+      .hero-symbol{
+        font-size:190px;
+        -webkit-text-stroke:1.6px rgba(239,246,255,.98);
+        text-stroke:1.6px rgba(239,246,255,.98);
+        transform:none;
+      }
+      h1{
+        font-size:56px;
+      }
+      .hero-lead,.section-text,.method p,.story p,.card p,.wallet-card p{
+        font-size:18px;
+      }
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+      .stat{
+        min-height:auto;
+        border-right:none;
+        border-bottom:1px solid var(--hero-line);
+      }
+      .stat:last-child{
+        border-bottom:none;
+      }
+      section.block{
+        padding:68px 0;
+      }
+      .card,.wallet-card,.method-aside{
+        padding:24px;
+        border-radius:24px;
+      }
+      .spow-highlight{
+        max-width:none;
+      }
+      .footer{
+        padding:54px 0 32px;
+      }
+      .footer-main{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      body > .site-header,
+      .hero-copy,
+      .hero-art,
+      .hero-stats,
+      section.block > .container,
+      body > .footer .container{
+        transition:none;
+      }
+
+      html.is-loading body > .site-header,
+      html.is-loading .hero-copy,
+      html.is-loading .hero-art,
+      html.is-loading .hero-stats,
+      html.is-loading section.block > .container,
+      html.is-loading body > .footer .container{
+        filter:none;
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark">Ҝ</div>
+        <div class="brand-name">Karbo</div>
+      </a>
+      <nav class="nav-links">
+        <a href="https://wallet.karbo.org">Wallet</a>
+        <a href="https://explorer.karbo.org">Explorer</a>
+        <a class="btn nav-download" href="#wallets">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" data-binary="01000110 01101001 01110010 01110011 01110100 00100000 01010101 01101011 01110010 01100001 01101001 01101110 01101001 01100001 01101110 00100000 01000011 01110010 01111001 01110000 01110100 01101111 01100011 01110101 01110010 01110010 01100101 01101110 01100011 01111001 00101110 00100000 01000001 00100000 01100100 01100101 01100011 01100101 01101110 01110100 01110010 01100001 01101100 01101001 01111010 01100101 01100100 00100000 01100101 01111000 01100011 01101000 01100001 01101110 01100111 01100101 00100000 01101101 01100101 01100100 01101001 01110101 01101101 00100000 01100010 01100001 01110011 01100101 01100100 00100000 01101111 01101110 00100000 01000011 01110010 01111001 01110000 01110100 01101111 01001110 01101111 01110100 01100101 00100000 01100010 01101100 01101111 01100011 01101011 01100011 01101000 01100001 01101001 01101110 00100000 01110100 01100101 01100011 01101000 01101110 01101111 01101100 01101111 01100111 01111001 00101110 00100000 01000010 01110101 01101001 01101100 01110100 00100000 01100110 01101111 01110010 00100000 01100100 01101001 01110010 01100101 01100011 01110100 00100000 01110000 01100101 01100101 01110010 00101101 01110100 01101111 00101101 01110000 01100101 01100101 01110010 00100000 01110101 01110011 01100101 00101100 00100000 01101111 01110000 01100101 01101110 00100000 01110000 01100001 01110010 01110100 01101001 01100011 01101001 01110000 01100001 01110100 01101001 01101111 01101110 00101100 00100000 01100001 01101110 01100100 00100000 01101001 01101110 01100100 01100101 01110000 01100101 01101110 01100100 01100101 01101110 01110100 00100000 01101111 01110111 01101110 01100101 01110010 01110011 01101000 01101001 01110000 00101110">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Karbo</h1>
+          <div class="hero-subtitle">Electronic Karbovanets</div>
+          <p class="hero-lead">
+            First Ukrainian Cryptocurrency.
+            A decentralized exchange medium based on CryptoNote blockchain technology.
+            Built for direct peer-to-peer use, open participation, and independent ownership.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#wallets">Download wallets</a>
+            <a class="btn btn-secondary" href="#about">Learn more</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="coin-cluster" aria-hidden="true">
+            <div class="coin-shade"></div>
+            <div class="bubble one"></div>
+            <div class="bubble two"></div>
+            <div class="bubble three"></div>
+            <div class="bubble four"></div>
+            <div class="coin-glow"></div>
+            <div class="hero-symbol">Ҝ</div>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <small>Established</small>
+            <strong>2016</strong>
+            <span>First Ukrainian cryptocurrency, launched without premine.</span>
+          </div>
+          <div class="stat">
+            <small>Fair Launch</small>
+            <strong>No ICO</strong>
+            <span>No premine, no token sale, and no foundation allocation before the public network.</span>
+          </div>
+          <div class="stat">
+            <small>Mining</small>
+            <strong>CPU Solo</strong>
+            <span>No Pools, ASIC-resistant Signed Proof-of-Work algorithm oriented toward individual miners.</span>
+          </div>
+          <div class="stat">
+            <small>Protocol</small>
+            <strong>CryptoNote</strong>
+            <span>Privacy and fungibility through unlinkable addresses, ring signatures, and equal coins.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">About</div>
+          <h2>You are your own bank.</h2>
+          <p class="section-text">
+            Karbo is people’s electronic cash: a peer-to-peer exchange medium that can be used without intermediaries, without account opening procedures, and without asking permission. Download a wallet, hold your own keys, and use the network directly.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Open and accessible</h3>
+            <p>Karbo is an open and decentralized network. Everyone is welcome to participate in usage, mining, development, and governance.</p>
+          </article>
+          <article class="card">
+            <h3>Direct control</h3>
+            <p>Only you control your money and are responsible for its safety. The system operates according to a predefined mathematical algorithm without central control bodies.</p>
+          </article>
+          <article class="card">
+            <h3>Peer-to-peer</h3>
+            <p>Transactions take place through a decentralized system without intermediaries. That is the starting point, not a feature add-on.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Core Values</div>
+          <h2>Built on principles not promises.</h2>
+
+          <p class="section-text">
+            We built Karbo on principles of decentralization, privacy, and egalitarian participation.
+            Those principles guide our design choices and development priorities, and they are more important to us
+            than any specific feature or roadmap item.
+          </p>
+
+          </div>
+      </div>
+    </section>
+
+    <section class="block" id="spow">
+      <div class="container method">
+        <div class="spow-copy">
+          <div class="section-kicker">Signed Proof-of-Work</div>
+
+          <h2>One CPU —<br /> <em>One Vote.</em></h2>
+
+          <div class="spow-highlight">
+            <p>Pool mining centralizes power.</p>
+            <p>ASIC mining centralizes hardware.</p>
+            <p>Centralization undermines the principles of decentralization and egalitarian participation.</p>
+          </div>
+
+        </div>
+
+        <aside class="method-aside">
+
+          <p>
+            One of the key principles of CryptoNote is <em>Egalitarian Proof of Work</em>: the POW mechanism acts as a voting system,
+            so participants should have equal voting privileges. We do not think mining centralization serves that principle.
+          </p>
+          <p>
+            We introduced CPU-only solo mining approach using custom YeSPOWer, blockchain cache, and signing blocks with miners’ private keys.
+            The purpose is to make pooled mining harder and thus to reduce pool and botnet centralization and to keep more regular users 
+            solo-mining and validating their own chain view.
+          </p>
+
+        </aside>
+      </div>
+    </section>
+
+    <section class="block" id="wallets">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Wallets & tools</div>
+          <h2>Download and use Karbo.</h2>
+          <p class="section-text">
+            Use the wallet that fits your setup. Run a node, use a desktop wallet, open the browser wallet, generate paper storage, or sync faster with bootstrap files.
+          </p>
+        </div>
+
+        <div class="wallet-grid">
+          <article class="wallet-card">
+            <div class="label">For services and nodes</div>
+            <h3>CLI Suite</h3>
+            <p>Command-line tools for running a node, mining, integration work, and protocol-level use.</p>
+            <div class="actions">
+              <a class="primary" href="https://github.com/seredat/karbowanec/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
+              <a class="secondary" href="https://github.com/seredat/karbowanec/" target="_blank" rel="noopener noreferrer">Source code</a>
             </div>
-        <!-- preloader end -->
+          </article>
 
-        <!-- ========================= header start ========================= -->
-        <header class="header navbar-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand page-scroll" href="#home">
-                                <img src="assets/img/logo/logo.svg" alt="Logo">
-								
-								<span lang="en">Karbo</span>
-								<span lang="uk">Карбованець</span>
-								<span lang="pl">Karbowaniec</span>
-								
-								<sup>Est. 2016</sup>
-                            </a>
-							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-							</button>
-
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ms-auto">
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#about">
-											<span lang="en">About</span>
-											<span lang="uk">Інфо</span>
-											<span lang="pl">Info</span>
-										</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#partners">
-											<span lang="en">Exchanges</span>
-											<span lang="uk">Обмін</span>
-											<span lang="pl">Giełdy</span>
-										</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://explorer.karbo.org/">
-											<span lang="en">Explorer</span>
-											<span lang="uk">Оглядач</span>
-											<span lang="pl">Eksplorator</span>
-										</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://docs.karbo.org/">
-											<span lang="en">Docs</span>
-											<span lang="uk">Документація</span>
-											<span lang="pl">Dokumentacja</span>
-										</a>
-                                    </li>
-                                </ul>
-								
-								<select class="w-auto me-4 form-select" id="language_selector">
-								  <option value="en">English</option>
-								  <option value="uk">Українська</option>
-								  <option value="pl">Polski</option>
-								</select>
-
-                                <div class="header-btn">
-                                    <a href="#download" class="theme-btn page-scroll">
-										<span lang="en">Download</span>
-										<span lang="uk">Завантажити</span>
-										<span lang="pl">Pobierz</span>
-									</a>
-                                </div>
-                            </div> <!-- navbar collapse -->
-                        </nav> <!-- navbar -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        
-        </header>
-        <!-- ========================= header end ========================= -->
-
-		<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="em-ribbon" style="position: fixed; left:0; top:0; width: 90px; height: 90px; background: url('https://stfalcon.github.io/stopwar/img/stop-war-in-ukraine.png'); z-index: 2013; border: 0;" title="Do something to stop this war! Russians are killing our children and civilians!" target="_blank"></a>
-
-        <!-- ========================= hero-section start ========================= -->
-        <section id="home" class="hero-section align-items-center">
-			<h1 class="clip-text clip-text-1 wow" data-wow-delay=".1s">
-				<span lang="en">KARBO</span>
-				<span lang="pl">KARBO</span>
-				<span lang="uk">КАРБО</span>
-			</h1>
-			<h1 class="clip-text clip-text-2 wow fadeInDown" data-wow-delay=".1s">
-				<span lang="en">KARBO</span>
-				<span lang="pl">KARBO</span>
-				<span lang="uk">КАРБО</span>
-			</h1>
-
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="hero-content-wrapper">
-                            <h2 class="text-white wow fadeInDown" data-wow-delay=".2s">
-								<span lang="en">Electronic Karbovanets</span>
-								<span lang="pl">Karbowaniec Elektroniczny</span>
-								<span lang="uk">Електронний Карбованець</span>
-								
-							</h2>
-                            <h1 class="text-white wow fadeInDown" data-wow-delay=".3s">
-								<span lang="en">Ukrainian privacy coin</span>
-								<span lang="pl">Ukraińska moneta prywatności</span>
-								<span lang="uk">перша українська криптовалюта</span>
-							</h1>
-                            <p class="text-white wow fadeInLeft"  data-wow-delay=".4s">
-								<span lang="en">cryptocurrency based on CryptoNote blockchain tech.</span>
-								<span lang="uk">на основі блокчейн-технології CryptoNote.</span>
-								<span lang="pl">w oparciu o technologię blockchain CryptoNote.</span>
-							</p>
-							
-                            <a href="#features" class="page-scroll theme-btn wow fadeInUp" data-wow-delay=".6s">
-								<span lang="en">Learn more</span>
-								<span lang="uk">Дізнайтесь більше</span>
-								<span lang="pl">Dowiedz się więcej</span>
-							</a>
-                        </div>
-                    </div>
-                </div>
+          <article class="wallet-card">
+            <div class="label">Native desktop wallet</div>
+            <h3>QT Wallet Classic</h3>
+            <p>The main desktop wallet for local keys, balances, transfers, and everyday use.</p>
+            <div class="actions">
+              <a class="primary" href="https://github.com/seredat/karbowanecwallet/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
+              <a class="secondary" href="https://github.com/seredat/karbowanecwallet/" target="_blank" rel="noopener noreferrer">Source code</a>
             </div>
-        </section>
-        <!-- ========================= hero-section end ========================= -->
+          </article>
 
-        <!-- ========================= feature-section start ========================= -->
-        <section id="features" class="feature-section pt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-8 col-md-9 mx-auto">
-                        <div class="section-title text-center mb-55">
-                            <span class="wow fadeInDown" data-wow-delay=".2s">
-								<span lang="en">Features</span>
-								<span lang="uk">Особливості</span>
-								<span lang="pl">Cechy</span>
-							</span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
-								<span lang="en">Confidential payments without intermediaries and regulators</span>
-								<span lang="uk">Конфіденційні платежі без посередників та регуляторів</span>
-								<span lang="pl">Poufne płatności bez pośredników i regulatorów</span>
-							</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">
-								<span lang="en">With Karbo you are your own bank</span>
-								<span lang="uk">Із Карбованцем ви самі собі банк</span>
-								<span lang="pl">Z Karbo jesteś swoim własnym bankiem</span>
-							</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-user-secret"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-								
-								<span lang="en">Privacy matters</span>
-								<span lang="uk">Конфіденційність має значення</span>
-								<span lang="pl">Poufność ma znaczenie</span>
-								</h4>
-                                <p>
-									<span lang="en">Hidden balances, untraceable payments, coins fungibility, resistance to the blockchain analysis thanks to the CryptoNote technology. Privacy is mandatory for all operations.</span>
-									<span lang="uk">Приховані баланси, невідстежувані платежі, взаємозамінність монет, стійкість до аналізу блокчейну - завдяки технології CryptoNote. Конфіденційність обов'язкова для всіх операцій.</span>
-									<span lang="pl">Ukryte salda, niemożliwe do śledzenia płatności, zamienność monet, odporność na analizę blockchain dzięki technologii CryptoNote. Prywatność jest obowiązkowa dla wszystkich operacji.</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-key"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-									<span lang="en">Liberty is your full control</span>
-									<span lang="uk">Свобода - це ваш повний контроль</span>
-									<span lang="pl">Wolność to Twoja pełna kontrola</span>
-								</h4>
-                                <p>
-									<span lang="en">Only you control your money and are responsible for their safety. No one can take them away from you or confiscate them, seize them, deny you access, or restrict your freedom to dispose of your money. You can send them to anyone, anywhere in the world anytime.</span>
-									<span lang="pl">Tylko ty kontrolujesz swoje karbowańce i jesteś odpowiedzialny za ich bezpieczeństwo. Nikt nie może ci ich odebrać ani skonfiskować, odmówić ci dostępu ani ograniczyć wolności do rozporządzania twoimi karbowańcami. Możesz wysłać je do dowolnego miejsca na świecie, komukolwiek i kiedykolwiek chcesz.</span>
-									<span lang="uk">Тільки ви контролюєте свої карбованці і відповідаєте за їх безпеку. Ніхто не може відібрати їх у вас чи конфіскувати, відмовити вам у доступі чи обмежити вашу свободу розпоряджатись своїми карбованцями. Ви можете відправити їх в будь-яку точку світу, кому завгодно і коли завгодно.</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-university"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-									<span lang="en">No intermediaries and regulators</span>
-									<span lang="uk">Без посередників і регуляторів</span>
-									<span lang="pl">Bez pośredników i regulatorów</span>
-								</h4>
-                                <p>
-									<span lang="en">Transactions take place through a decentralized system without any intermediaries. And emissions system operates according to a predefined mathematical algorithm without central control bodies.</span>
-									<span lang="pl">Transakcje są dokonywane przez zdecentralizowany system bez pośredników. System i emisja działają zgodnie z określonym algorytmem matematycznym bez scentralizowanego zarządzania.</span>
-									<span lang="uk">Транзакції проходять через децентралізовану систему без будь-яких посередників. Система та емісія працює згідно заданого математичного алгоритму без центральних та контролюючих органів.</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-door-open"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-									<span lang="en">Openness and accessibility</span>
-									<span lang="uk">Відкритість і доступність кожному</span>
-									<span lang="pl">Otwartość i dostępność dla wszystkich</span>
-								</h4>
-                                <p>
-									<span lang="en">Karbo is an open and decentralized network. Everyone is welcomed to contribute, participate in mining, development and governance. There are no monthly account fees, there is no need for a bank card, license or permission, – you can download a Karbo wallet free of charge.</span>
-									<span lang="pl">Karbowaneć — to otwarty, egalitarny, zdecentralizowany system. Każdy może dołączyć do rozwoju oraz zostać użytkownikiem bez żadnych ograniczeń. Brak opłat miesięcznych, nie trzeba iść do banku, aby otworzyć konto — wystarczy tylko pobrać portfel i uruchomić go. Bezpłatnie.</span>
-									<span lang="uk">Карбованець — відкрита, децентралізована система. Кожен може долучитись до розробки та самоврядування, стати користувачем мережі без жодних дозволів та обмежень. Немає абонентської плати, непотрібно йти до банку відкривати рахунок — вистачить завантажити і запустити гаманець. Безкоштовно.</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-									<span lang="en">Security and reliability</span>
-									<span lang="uk">Безпека та надійність</span>
-									<span lang="pl">Bezpieczeństwo i niezawodność</span>
-								</h4>
-                                <p>
-									<span lang="en">The network, transactions, your account, and your coins are cryptographically protected (encrypted).</span>
-									<span lang="pl">Sieć, transakcje, twoje konto i karbowańce są chronione kryptograficznie (szyfrowane).</span>
-									<span lang="uk">Мережа, транзакції, ваш рахунок та карбованці криптографічно захищені (зашифровані).</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-4 col-md-6">
-                        <div class="feature-box box-style">
-                            <div class="feature-icon box-icon-style">
-                                <i class="fas fa-coins"></i>
-                            </div>
-                            <div class="box-content-style feature-content">
-                                <h4>
-									<span lang="en">All coins are equal</span>
-									<span lang="uk">Всі монети рівноцінні</span>
-									<span lang="pl">Wszystkie monety są takie same </span>
-								</h4>
-                                <p>
-									<span lang="en">Fungibility means all coins have equal value and are interchangeable because it is impossible to trace their history.</span>
-									<span lang="pl">Wszystkie karbowańce mają tę samą wartość i są jednorodne, to znaczy wymienne, ponieważ ich przeszłości nie można prześledzić.</span>
-									<span lang="uk">Усі карбованці мають однакову вартість і є однорідними, тобто взаємозамінними, тому що їхню історію неможливо прослідкувати.</span>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <article class="wallet-card">
+            <div class="label">Alternative desktop wallet</div>
+            <h3>Spring Wallet</h3>
+            <p>An alternative graphical wallet for users who prefer a different interface.</p>
+            <div class="actions">
+              <a class="primary" href="https://github.com/seredat/karbo-gui/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
+              <a class="secondary" href="https://github.com/seredat/karbo-gui/" target="_blank" rel="noopener noreferrer">Source code</a>
             </div>
-        </section>
-        <!-- ========================= feature-section end ========================= -->
+          </article>
 
-		<!--========================= pow-section start========================= -->
-        <section id="about" class="pt-100">
-            <div class="about-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="about-content-wrapper">
-                                <div class="section-title text-center">
-                                    <span class="wow fadeInUp" data-wow-delay=".2s">
-										<span lang="en">One CPU — One Vote</span>
-										<span lang="pl">Jenen Procesor — Jeden Głos</span>
-										<span lang="uk">Один Процесор — Один Голос</span>
-									</span>
-                                    <h2 class="mb-40 wow fadeInRight" data-wow-delay=".4s">
-										<span lang="en">Solo-only CPU mining without pools and ASICs</span>
-										<span lang="pl">Wydobywanie wyłącznie solo na procesorze, bez kopalni</span>
-										<span lang="uk">Виключно соло-майнінг, без пулів та ASIC</span>
-									</h2>
-                                </div>
-                                <div class="about-content">
-                                    <p class="mb-45 wow fadeInUp" data-wow-delay=".6s">
-										<span lang="en">
-											One of the key principles of CryptoNote is Egalitarian Proof of Work: "The proof of work mechanism acts as a voting system. Thus, it is crucial that during the voting process all the participants have equal voting privileges." 
-
-											In attempt to disable and prevent centralization of mining resulting in possible censorship, we introduced botnet- and mining pools resistant solo mining approach, called “Signed Proof-of-Work”.
-
-											We replaced the standard POW algorithm for CryptoNote coins with our unique CPU-only solo mining algo that uses custom YeSPOWer with blockchain cache and signing blocks with miner's private keys thus effectively preventing pooled mining and botnets.
-                                        </span>
-										<span lang="uk">
-											Одним із ключових принципів CryptoNote є Егалітарний Доказ Виконаної Роботи (POW): «Механізм підтвердження роботи діє як система голосування. Тому вкрай важливо, щоб під час процесу голосування всі учасники мали однакові привілеї голосування».
-
-											Щоб запобігти централізації майнінгу, а відтак потенційній цензурі, ми запровадили стійкий до ботнетів і пулів підхід до соло-майнінгу, який називається «Підписане Підтвердження Роботи».
-
-											Ми замінили стандартний алгоритм POW для монет CryptoNote нашим унікальним алгоритмом соло-майнінгу лише на ЦП, який використовує модифікований YeSPOWer з кешуванням блокчейну та підписуванням блоків приватними ключами майнера, таким чином ефективно запобігаючи майнінгу в пулах та ботнетам.
-										</span>
-										<span lang="pl">
-											Jedną z kluczowych zasad CryptoNote jest Egalitarny dowód pracy: „Mechanizm dowodu pracy działa jak system głosowania. Dlatego ważne jest, aby podczas procesu głosowania wszyscy uczestnicy mieli równe prawa głosu”. 
-
-											Próbując zapobiec centralizacji kopania skutkującej możliwą cenzurą, wprowadziliśmy podejście do kopania solo, odporne na botnety i pule wydobywcze, zwane „Signed Proof-of-Work”.
-
-											Zastąpiliśmy standardowy algorytm POW dla monet CryptoNote naszym unikalnym algorytmem kopania solo, przeznaczonym tylko dla procesorów, który wykorzystuje niestandardowy YeSPOWer z pamięcią podręczną blockchain i podpisywaniem bloków kluczami prywatnymi, skutecznie zapobiegając w ten sposób wydobywaniu w pulach wydobywczych i botnetom.
-										</span>
-                                    </p>
-									
-									<p class="text-center">
-
-										<a href="https://github.com/Karbovanets/papers/blob/master/SPOW.md" class="theme-btn border-btn wow fadeInUp" data-wow-delay=".6s">
-											<span lang="en">Read more</span>
-											<span lang="uk">Докладніше</span>
-											<span lang="pl">Dokładniej</span>
-										</a>
-
-										<a href="#download" class="theme-btn wow fadeInUp" data-wow-delay=".6s">
-											<span lang="en">Download & start mining</span>
-											<span lang="uk">Скачати й почати майнінг</span>
-											<span lang="pl">Pobierz i zacznij kopać</span>
-										</a>
-
-
-									</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <article class="wallet-card">
+            <div class="label">In the browser</div>
+            <h3>Browser Wallet</h3>
+            <p>Client-side browser access for quick use without installing a desktop application.</p>
+            <div class="actions">
+              <a class="primary" href="https://wallet.karbo.org/" target="_blank" rel="noopener noreferrer">Open wallet</a>
             </div>
-        </section>
-        <!--========================= pow-section end========================= -->
+          </article>
 
-        <!--========================= about-section start========================= -->
-        <section>
-            <div class="pt-100 pb-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="about-content-wrapper">
-                                <div class="section-title text-center">
-                                    <span class="wow fadeInUp" data-wow-delay=".2s">
-										<span lang="en">People's electronic cash</span>
-										<span lang="pl">Elektroniczna gotówka ludowa</span>
-										<span lang="uk">Народна електронна готівка</span>
-									</span>
-                                    <h2 class="mb-40 wow fadeInRight" data-wow-delay=".4s">
-										<span lang="en">Peer-to-peer uncensored transactions</span>
-										<span lang="pl">Nieocenzurowalne transakcje peer-to-peer</span>
-										<span lang="uk">Безпосередні транзакції без цензури</span>
-									</h2>
-                                </div>
-                                <div class="about-content">
-                                    <p class="mb-45 wow fadeInUp" data-wow-delay=".6s">
-										<span lang="en">
-											Karbo — is electronic cash, Ukrainian national cryptocurrency, just like Bitcoin but anonymous thanks to Cryptonote technology. <br />
-											
-											The name "Karbo" is derived from Ukrainian word "karbovanets", that comes from an ancient way of recording settlements or debts by marking wooden stick called "tally stick" or "tally" with a system of notches that was very popular in the Mediaeval Europe from Antiquity up to the first decades of XX century. The stick would be split in half, down its length from one end to the other. The debtor would retain half, called the "foil". The creditor would retain the other half, called the "stock". Because wooden stick has natural and distinctive irregularities, the two halves would match only each other providing simple and effective protection against forgery. The way medieval tally sticks system worked resembles how blockchain works. The name "karbovanets" and its shortened version "Karbo" is derived from the stem "karb" in Eastern European languages for marks on tally sticks.<br />
-											
-											The "karbovanets" has been a distinct unit of currency in Ukraine during three separate periods in its history. 
-											
-											"Karbovanets" therefore is a very well-known word, with very strong associations with "money" not only in Ukraine but also in Russia and other neighboring countries. It sounds familiar to people, which makes it more easy to adopt.
-											
-											It was resurrected in the digital form of cryptocurrency as people’s unofficial, independent exchange medium.
-                                        </span>
-										<span lang="uk">
-											“Карбованець” — це цифрові інтернет-гроші, криптовалюта, така як Біткойн, тільки українська і конфіденційна завдяки технологіям Cryptonote.<br />
-																				
-											Назва походить від стародавнього способу записування розрахунків або боргів шляхом нанесення (карбування) на дерев’яній паличці спеціальних позначок — “карбів” (зарубок), який був поширеним на території сучасної України і цілої Європи в єпоху Середньовіччя, а подекуди вживався ще навіть на початку XX ст. Палиця розщеплювалась уздовж надвоє і кожна половина з зарубками залишалася в учасників угоди. Приклавши половинки одну до одної, можна було перевірити чи не підроблялись зарубки. Це дуже нагадує роботу блокчейну.<br />
-
-											“Карбованець” був грошовою одиницею України в різні періоди її історії до 1996 року, а також це українська назва грошової одиниці СРСР. 
-
-											“Карбованець”, таким чином, є дуже відомим словом, що міцно асоціюється з грошима не тільки на території України, але й в сусідніх країнах. Це слово знайоме людям, що полегшує сприйняття. У неслов’янських ресурсах для полегшення читання та вимови використовується скорочення “Karbo”, яке користується популярністю й серед українських користувачів.
-
-											“Карбованець" відновлено в цифровій формі криптовалюти у якості народної обмінної одиниці – неофіційної та незалежної.
-										</span>
-										<span lang="pl">
-											„Karbowaniec” (Karbo) jest zdecentralizowaną siecią wymiany typu peer-to-peer, 
-											
-											Karbo — to ukraińska kryptowaluta narodowa, zdecentralizowana sieć wymiany typu peer-to-peer, podobnie jak Bitcoin, ale anonimowa dzięki technologii Cryptonote.<br />
-											
-											Nazwa pochodzi od starożytnego sposobu zapisu rozliczeń lub długów poprzez wycinanie (karbowanie) na drewnianym patyku znaków tzw. „karbów”, który był powszechny na terenie współczesnej Ukrainy i całej Europy w epoce średniowiecza, a czasami używany nawet na początku XX wieku. Patyczek był dzielony na dwiw czśći wzdłuż i każda połowa zostawała u uczestników transakcji. Przykładając połówki jedną do drugiej, można było sprawdzić, czy karby nie zostały sfałszowane. To przypomina zasadę działania technologii blockchain.<br />
-
-											„Karbowaneć – to jednostka pieniężna Ukrainy w w różnych okresach jej historii do 1996 roku, a także w ZSRR nazwa nazwa „karbowaniec” była używana oficjalnie jako ukraińskojęzyczny odpowiednik słowa „rubel” i widniała na radzieckich banknotach.
-
-											„Karbowaniec” jest więc znanym słowem, które jest mocno powiązane z pieniędzmi nie tylko w Ukrainie, ale także w sąsiednich krajach, co ułatwia percepcję. Dla ułatwienia czytania i wymowy, używa się nazwa skrócona “Karbo”.
-
-											„Karbowaniec” został przywrócony w formie cyfrowej kryptowaluty jako ludowa jednostka wymiany – nieformalny i niezależny.
-										</span>
-                                    </p>								
-                                </div>
-
-								<p class="text-center">
-									<a href="https://docs.karbo.org/" class="theme-btn wow fadeInUp" data-wow-delay=".6s">
-										<span lang="en">Documentation</span>
-										<span lang="uk">Документація</span>
-										<span lang="pl">Dokumentacja</span>
-									</a>
-								</p>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <article class="wallet-card">
+            <div class="label">Offline generation</div>
+            <h3>Paper Wallet</h3>
+            <p>Generate wallet data offline for cold storage and archival use.</p>
+            <div class="actions">
+              <a class="primary" href="https://paperwallet.karbo.org/" target="_blank" rel="noopener noreferrer">Open generator</a>
             </div>
-        </section>
-        <!--========================= about-section end========================= -->
+          </article>
 
-		<!-- ========================= specs-section start ========================= -->
-        <section id="specs" class="pt-100 pb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-7 col-md-9 mx-auto">
-                        <div class="section-title text-center mb-55">
-                            <span class="wow fadeInDown" data-wow-delay=".2s">
-								<span lang="en">Specs & Stats</span>
-								<span lang="uk">Характеристики</span>
-								<span lang="pl">Specyfikacje</span>
-							</span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
-								<span lang="en">Specification</span>
-								<span lang="uk">Специфікація</span>
-								<span lang="pl">Specyfikacja</span>
-							</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">
-								<span lang="en">Some basic details in a nutshell</span>
-								<span lang="uk">Дяякі технічні параметри</span>
-								<span lang="pl">Niektóre podstawowe informacje</span>
-							</p>
-                        </div>
-                    </div>
-                </div>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="wow fadeInUp" data-wow-delay=".5s">
-							<ul lang="en">
-								<li>Ticker: KRB</li>
-								<li>Symbol: Ҝ &ndash; Ka with vertical stroke, it is a letter of the Cyrillic script</li>
-								<li>Proof-of-work algorithm: Custom YeSPOWer</li>
-								<li>Block time: 240 seconds</li>
-								<li>Difficulty: retarget each block</li>
-								<li>Divisible up to: 10<sup>12</sup> atomic units (up to 12 decimal places)</li>
-								<li>Emission: infinite, initial supply &ndash; 10,000,000,000,000,000,000 atomic units, or 10&nbsp;million KRB</li>
-								<li>Tail emission: ~2% inflation p.a.</li>
-								<li>Block reward: slight change every block according to formula
-									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
-									where 'S' is initial supply, 'A' is amount of already generated coins,
-									'B' is est. nr of blocks p.a.
-								</li>
-							</ul>
-							<ul lang="pl">
-								<li>Ticker: KRB</li>
-								<li>Symbol: Ҝ &ndash; litera Ka cyrylicy z pionową kreską</li>
-								<li>Algorytm Proof-of-work: Custom YeSPOWer</li>
-								<li>Czas bloku: 240 sekund</li>
-								<li>Poziom trudności: ponownie w każdym bloku</li>
-								<li>Podzielność na: 10<sup>12</sup> jednostek (do 12 znaków po przecinku)</li>
-								<li>Emisja: stała, początkowa ilość monet &ndash; 10,000,000,000,000,000,000 najmniejszych jednostek, lub 10 milionów KRB</li>
-								<li>Dodatkowa emisja: ~2% od początkowej ilości za rok</li>
-								<li>Nagroda za blok: stopniowo zmienia się w każdym bloku wg formuły
-									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
-									gdzie 'S' = ilość najmniejszych jednostek, 'A' - ilość już dobytych jednostek, 'B' to szacunkowa liczba bloków rocznie.
-								</li>
-							</ul>
-							<ul lang="uk">
-								<li>Тікер: KRB</li>
-								<li>Символ: Ҝ &ndash; кирилична літера Ка з вертикальним штрихом</li>
-								<li>Алгоритм Proof-of-work: Custom YeSPOWer</li>
-								<li>Час блоку: 240 секунд</li>
-								<li>Рівень складності: перенацілювання кожного блоку</li>
-								<li>Ділиться на: 10<sup>12</sup> одиниць (до 12 знаків після коми)</li>
-								<li>Емісія: постійна, початкова маса монет &ndash; 10,000,000,000,000,000,000 найменших одиниць, або 10 мільйонів крб.</li>
-								<li>Додаткова емісія: інфляція ~2% від початкової маси у рік</li>
-								<li>Нагорода за блок: плавно змінюється кожного блоку за формулою
-									<pre>R = max((S - A)/2<sup>18</sup>, (A / 100 * 2) / B)</pre>
-									де 'S' = к-ть найменших одиниць, 'A' - к-ть вже викарбуваних монет, 'B' - є оціночним числом блоків на рік
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="wow fadeInUp" data-wow-delay=".5s">
-							<h4 class="mb-40 wow">
-								<span lang="en">Live stats</span>
-								<span lang="uk">Статистика на живо</span>
-								<span lang="pl">Statystyki na żywo</span>
-							</h4>
-							<ul>
-								<li> 
-									<span lang="en">Blockchain height:</span>
-									<span lang="uk">Висота блокчейну:</span>
-									<span lang="pl">>Wysokość blockchain:</span>
-									<a href="http://explorer.karbo.org/" class="normal-links" target="_blank" id="last-block-url"><span id="blockchain-height">...</span></a></li>
-								<li> 
-									<span lang="en">Hashrate:</span>
-									<span lang="uk">Швидкість хешування:</span>
-									<span lang="pl">Szybkość hashowania:</span>
-									<span id="hashrate">...</span></li>
-								<li>
-									<span lang="en">Difficulty:</span>
-									<span lang="uk">Складність карбування:</span>
-									<span lang="pl">Trudność karbowania:</span>
-									<span id="difficulty">...</span></li>
-								<li>
-									<span lang="en">Reward:</span>
-									<span lang="uk">Нагорода за блок:</span>
-									<span lang="pl">Nagroda za blok:</span>
-									<span id="reward">...</span></li>
-								<li>
-									<span lang="en">Supply:</span>
-									<span lang="uk">Карбованців в обігу:</span>
-									<span lang="pl">Całkowita liczba wybitych monet:</span>
-									<span id="emission">...</span></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
+          <article class="wallet-card">
+            <div class="label">Fast sync</div>
+            <h3>Bootstrap</h3>
+            <p>Download bootstrap files to synchronize a fresh node or wallet faster.</p>
+            <div class="actions">
+              <a class="primary" href="https://bootstrap.karbo.io/" target="_blank" rel="noopener noreferrer">Open bootstrap</a>
             </div>
-        </section>
-		<!--========================= specs-section end========================= -->
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- ========================= download-section start ========================= -->
-        <section id="download" class="download-section pt-130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-7 col-md-9 mx-auto">
-                        <div class="section-title text-center mb-55">
-                            <span class="wow fadeInDown" data-wow-delay=".2s">
-								<span lang="en">Download</span>
-								<span lang="uk">Завантажити</span>
-								<span lang="pl">Pobierz</span>
-							</span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
-								<span lang="en">Our wallets and apps</span>
-								<span lang="uk">Наші гаманці та програми</span>
-								<span lang="pl">Nasze portfele i aplikacje</span>
-							</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">
-								<span lang="en">Choose and download wallet for your operating system</span>
-								<span lang="uk">Виберіть та завантажте гаманець для вашої системи</span>
-								<span lang="pl">Wybierz i pobierz portfel dla swojego systemu</span>
-							</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-terminal"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>Command-line Suite</h4>
-                                <p>
-									<span lang="en">Command-line tools for services.</span>
-									<span lang="uk">Набір для роботи в командному рядку.</span>
-									<span lang="pl">Zestaw programów wiersza poleceń.</span>
-								</p>
-																	
-									<ul class="fa-ul">
-										<li><span class="fa-li"><i class="fas fa-download"></i></span> <a href="https://github.com/seredat/karbowanec/releases/latest">
-											<span lang="en">Download</span>
-											<span lang="uk">Завантажити</span>
-											<span lang="pl">Pobierz</span>
-										</a></li>
-										<li><span class="fa-li"><i class="fab fa-github"></i></span> <a href="https://github.com/seredat/karbowanec/">
-											<span lang="en">Source code</span>
-											<span lang="uk">Вихідний код</span>
-											<span lang="pl">Kod źródłowy</span>
-										</a></li>
-									</ul>
-								</p>
-								
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>QT Wallet Classic</h4>
-                                <p>
-									<span lang="en">Native Karbo wallet.</span>
-									<span lang="uk">Основний гаманець Карбо.</span>
-									<span lang="pl">Natywny portfel Karbo.</span>
-								</p>
-							
-								<ul class="fa-ul">
-									<li><span class="fa-li"><i class="fas fa-download"></i></span> <a href="https://github.com/seredat/karbowanecwallet/releases/latest">
-										<span lang="en">Download</span>
-										<span lang="uk">Завантажити</span>
-										<span lang="pl">Pobierz</span>
-										</a></li>
-									<li><span class="fa-li"><i class="fab fa-github"></i></span> <a href="https://github.com/seredat/karbowanecwallet/">
-										<span lang="en">Source code</span>
-										<span lang="uk">Вихідний код</span>
-										<span lang="pl">Kod źródłowy</span>
-									</a></li>
-								</ul>
-								</p>
-								
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>QT Spring Wallet</h4>
-                                <p>
-									<span lang="en">Alternative Karbo wallet.</span>
-									<span lang="uk">Альтернативний гаманець Карбо.</span>
-									<span lang="pl">Alternatywny portfel Karbo.</span>
-								</p>
-								
-								<ul class="fa-ul">
-									<li><span class="fa-li"><i class="fas fa-download"></i></span> <a href="https://github.com/seredat/karbo-gui/releases/latest">
-										<span lang="en">Download</span>
-										<span lang="uk">Завантажити</span>
-										<span lang="pl">Pobierz</span>
-									</a></li>
-									<li><span class="fa-li"><i class="fab fa-github"></i></span> <a href="https://github.com/seredat/karbo-gui/">
-										<span lang="en">Source code</span>
-										<span lang="uk">Вихідний код</span>
-										<span lang="pl">Kod źródłowy</span>
-									</a></li>
-								</ul>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>Web Wallet</h4>
-								<p>
-									<span lang="en">Custodial. Accessible anywhere, anytime. Instant: no need to wait for sync.</span>
-									<span lang="uk">Кастодіальний. Доступний всюди й будь-коли. Не треба чекати на синхронізацію.</span>
-									<span lang="pl">Powierniczy. Dostępny wszędzie, kiedykolwiek i natychmiast. Nie trzeba czekać na synchronizację.</span>
-								</p>
-                                <p>
-									<ul class="fa-ul">
-										<li><span class="fa-li"><i class="fas fa-wallet"></i></span> <a href="https://karbo.me/">karbo.me</a> + <a href="http://telegram.me/karboMeBot">Telegram bot</a> </span></li>
-									</ul>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>Browser Wallet</h4>
-								<p>
-									<span lang="en">Client-side. Works right in your browser.</span>
-									<span lang="uk">На стороні клієнта. Працює просто у вашому браузері.</span>
-									<span lang="pl">Po stronie klienta. Działa bezpośrednio w Twojej przeglądarce.</span>
-								</p>
-                                <p>
-									<ul class="fa-ul">
-										<li><span class="fa-li"><i class="fab fa-github"></i></span> <a href="https://wallet.karbo.org/">wallet.karbo.org</a></span></li>
-									</ul>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-scroll"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>Paper Wallet</h4>
-								<p>
-									<span lang="en">Offline wallet generator.</span>
-									<span lang="uk">Офлайн генератор гаманця.</span>
-									<span lang="pl">Generator portfela offline.</span>
-								</p>
-                                <p>
-									<ul class="fa-ul">
-                                        <li><span class="fa-li"><i class="fas fa-toilet-paper"></i></span> <a href="https://paperwallet.karbo.org/">
-											<span lang="en">Mnemonic</span>
-											<span lang="uk">Мнемонічний</span>
-											<span lang="pl">Mnemoniczny</span>
-										</a></li>
-										<li><span class="fa-li"><i class="fas fa-toilet-paper"></i></span> <a href="https://karbovanets.github.io/old-paperwallet/">
-											<span lang="en">Passphrase</span>
-											<span lang="uk">Парольна фраза</span>
-											<span lang="pl">Hasło</span>
-										</a> <span class="badge bg-secondary"><small>
-											<span lang="en">Deprecated</span>
-											<span lang="uk">Застарілий</span>
-											<span lang="pl">Nieaktualny</span>
-										</small></span></li>
-										<li><span class="fa-li"><i class="fas fa-toilet-paper"></i></span> <a href="https://explorer.karbo.org/#paperwallet">
-											<span lang="en">Explorer</span>
-											<span lang="uk">Оглядач</span>
-											<span lang="pl">Eksplorator</span>
-										</a></li>
-									</ul>
-								</p>
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-4 col-md-6">
-                        <div class="download-box box-style">
-                            <div class="download-icon box-icon-style">
-                                <i class="fas fa-download"></i>
-                            </div>
-                            <div class="box-content-style download-content">
-                                <h4>Blockchain Bootstrap</h4>
-                                <p>
-									<span lang="en">Blockchain files for downloading.</span>
-									<span lang="uk">Файли блокчейну для завантаження.</span>
-									<span lang="pl">Pliki Blockchain do pobrania.</span>
-								</p>
-								<p>
-									<ul class="fa-ul">
-										<li><span class="fa-li"><i class="fa fa-download"></i></span> <a href="https://bootstrap.karbo.io/">bootstrap.karbo.io</a></li>
-									</li>
-								</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="block" id="history">
+      <div class="container two-col">
+        <div>
+          <div class="section-kicker">Heritage</div>
+          <h2>A name<br /> <em>carved</em> in<br /> history</h2>
+        </div>
+        <div class="story">
 
-					
-                </div>
-            </div>
-        </section>
-        <!-- ========================= download-section end ========================= -->
+          <blockquote class="heritage-quote">
+            <strong>Karbovanets</strong> (карбованець) — the historic name for Ukraine's currency, 
+            from the word meaning <em>to notch</em> or <em>to carve a tally</em>.
+          </blockquote>
 
-        <!--========================= partners-section start ========================= -->
-        <section id="partners" class="partners-section pt-130">
-            <div id="container" class="container">
-				<div class="row">
-					<div class="col-xl-12 col-lg-12 pb-100">
-                        <div class="section-title text-center">
-                            <span class="wow fadeInDown" data-wow-delay=".2s">
-								<span lang="en">Ecosystem</span>
-								<span lang="uk">Екосистема</span>
-								<span lang="pl">Ekosystem</span>
-							</span>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">
-								<span lang="en">Where to buy or exchange</span>
-								<span lang="uk">Де купити й обміняти</span>
-								<span lang="pl">Gdzie kupić i wymienić</span>
-							</h2>
-                        </div>
-                    </div>
-                </div>
+          <p>
+            The karbovanets has deep roots in Ukrainian monetary history. The word itself comes from the ancient practice of carving notches 
+            into tally sticks to record debts and transactions — a pre-bank, pre-institution system of keeping accounts that belonged to the 
+            people who made the marks.</p>
+          <p style="margin-top: 1rem;">
+            Karbo carries this heritage forward. Where tally sticks were carved wood, Karbo is carved mathematics. 
+            The ledger is distributed across thousands of machines. The marks cannot be erased, altered, or confiscated. 
+            The history is the record, and the record belongs to no one.</p>
+          <p style="margin-top: 1rem;">
+            “Karbovanets” was also a distinct unit of currency in Ukraine during different periods of its history. 
+            We brought that name back in digital form as an unofficial and independent exchange medium.
+          </p>
 
-                <div class="row grid">
-                    <div class="col-lg-2 col-md-4 col-sm-6 grid-item exchange">
-                        <div class="partners-item-wrapper">
-                            <div class="partners-img">
-                                <img src="assets/img/partners/btc-trade-ua.png" alt="BTC-Trade UA">
-                            </div>
-                            <div class="partners-overlay">
-                                <div class="overlay-content">
-                                    <h4>BTC-Trade UA</h4>
-                                    <a href="https://btc-trade.com.ua/" target="_blank" class="theme-btn border-btn"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                    <div class="col-lg-2 col-md-4 col-sm-6 grid-item exchange">
-                        <div class="partners-item-wrapper">
-                            <div class="partners-img">
-                                <img src="assets/img/partners/richamster.jpg" alt="Richamster">
-                            </div>
-                            <div class="partners-overlay">
-                                <div class="overlay-content">
-                                    <h4>Richamster</h4>
-                                    <a href="https://richamster.com/" target="_blank" class="theme-btn border-btn"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <strong>Karbo</strong>
+          <p>Electronic Karbovanets: a local, independent exchange medium built on CryptoNote and Signed Proof-of-Work.</p>
+        </div>
 
-                    <div class="col-lg-2 col-md-4 col-sm-6 grid-item exchange">
-                        <div class="partners-item-wrapper">
-                            <div class="partners-img">
-                                <img src="assets/img/partners/occe.png" alt="OCCE">
-                            </div>
-                            <div class="partners-overlay">
-                                <div class="overlay-content">
-                                    <h4>OCCE</h4>
-                                    <a href="https://www.occe.io/" target="_blank" class="theme-btn border-btn"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="footer-links">
+          <h3 class="footer-kicker">Network</h3>
+          <ul>
+            <li><a href="https://explorer.karbo.org/" target="_blank" rel="noopener noreferrer">Block Explorer</a></li>
+            <li><a href="https://docs.karbo.org/#/mining" target="_blank" rel="noopener noreferrer">Mining</a></li>
+            <li><a href="https://docs.karbo.org/" target="_blank" rel="noopener noreferrer">Documentation</a></li>
+            <li><a href="https://github.com/Karbovanets/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
 
-					<div class="col-lg-2 col-md-4 col-sm-6 grid-item exchange">
-                        <div class="partners-item-wrapper">
-                            <div class="partners-img">
-                                <img src="assets/img/partners/xeggex.png" alt="Xeggex">
-                            </div>
-                            <div class="partners-overlay">
-                                <div class="overlay-content">
-                                    <h4>Xeggex</h4>
-                                    <a href="https://xeggex.com" target="_blank" class="theme-btn border-btn"><i class="fas fa-external-link-alt"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="footer-links">
+          <h3 class="footer-kicker">Community</h3>
+          <ul>
+            <li><a href="https://t.me/karbo_en" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+            <li><a href="https://discord.gg/PMUJBd" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            <li><a href="https://www.reddit.com/r/krb/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
+            <li><a href="https://x.com/krbcoin" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
+          </ul>
+        </div>
 
-                </div>
-            </div>
-        </section>
-        <!-- ========================= partners-section end ========================= -->
+        <div class="footer-links">
+          <h3 class="footer-kicker">Resources</h3>
+          <ul>
+            <li><a href="https://github.com/Karbovanets/papers" target="_blank" rel="noopener noreferrer">Whitepapers</a></li>
+            <li><a href="https://github.com/Karbovanets/karbo-brand-media" target="_blank" rel="noopener noreferrer">Media Kit</a></li>
+            <li><a href="https://karbo.org/#exchanges" target="_blank" rel="noopener noreferrer">Exchanges</a></li>
+            <li><a href="https://github.com/seredat/karbowanec/issues" target="_blank" rel="noopener noreferrer">Bug Reports</a></li>
+          </ul>
+        </div>
 
-        <!-- ========================= footer start ========================= -->
-        <footer class="footer pt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".4s">
-                            <h4>
-								<span lang="en">Useful links</span>
-								<span lang="de">Nützliche Links</span>
-								<span lang="uk">Корисні посилання</span>
-								<span lang="pl">Przydatne linki</span>
-								<span lang="es">Enlaces útiles</span>
-								<span lang="cn">有用的链接</span>
-								<span lang="jp">便利なリンク</span>
-								<span lang="kr">유용한 링크</span>
-							</h4>
-                            <ul class="footer-links">
-								<li class="nav-item">
-                                    <a href="https://explorer.karbo.org/">
-										<span lang="en">Explorer</span>
-										<span lang="de">Explorer</span>
-										<span lang="uk">Оглядач блокчейну</span>
-										<span lang="pl">Explorator blockchain</span>
-										<span lang="es">Explorador de blockchain </span>
-										<span lang="cn">区块链资源管理器</span>
-										<span lang="jp">ブロックチェーンエクスプローラー</span>
-										<span lang="kr">블록 체인 탐색기</span>
-									</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://docs.karbo.org/">
-										<span lang="en">Documentation</span>
-										<span lang="de">Dokumentation</span>
-										<span lang="uk">Документація</span>
-										<span lang="pl">Dokumentacja</span>
-										<span lang="es">Documentación</span>
-										<span lang="cn">文献资料</span>
-										<span lang="jp">ドキュメンテーション</span>
-										<span lang="kr">선적 서류 비치</span>
-									</a>
-                                </li>
-								<li class="nav-item">
-                                    <a href="https://wallet.karbo.org/">Web-wallet</a>
-                                </li>
-								<li class="nav-item">
-                                    <a href="https://pay.karbo.org/">Simple payment gateway (POS)</a>
-                                </li>
-								<li class="nav-item">
-                                    <a href="https://paymentid.karbo.org/">Payment ID generator</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInUp" data-wow-delay=".6s">
-                            <h4>
-								<span lang="en">Legal and Brand</span>
-								<span lang="de">Rechtliche Hinweise und Marke</span>
-								<span lang="uk">Юридична інформація та бренд</span>
-								<span lang="pl">Informacje prawne i marka</span>
-								<span lang="es">Información legal y marca</span>
-								<span lang="cn">法律信息和品牌</span>
-								<span lang="jp">法的情報とブランド</span>
-								<span lang="kr">법률 정보 및 브랜드</span>
-							</h4>
-                            <ul class="footer-links">
-                                <li>
-                                    <a href="privacy-policy.html">
-										<span lang="en">Privacy policy</span>
-										<span lang="de">Datenschutz-Bestimmungen</span>
-										<span lang="uk">Політика конфіденційності</span>
-										<span lang="pl">Polityka prywatności</span>
-										<span lang="es">Confidencialidad</span>
-										<span lang="cn">机密性</span>
-										<span lang="jp">プライバシーポリシー</span>
-										<span lang="kr">개인 정보 보호 정책</span>
-									</a>
-                                </li>
-                                <li>
-                                    <a href="terms-and-conditions.html">
-										<span lang="en">Terms and conditions</span>
-										<span lang="de">Geschäftsbedingungen</span>
-										<span lang="uk">Правила та умови</span>
-										<span lang="pl">Regulamin</span>
-										<span lang="es">Condiciones</span>
-										<span lang="cn">条件</span>
-										<span lang="jp">利用規約</span>
-										<span lang="kr">이용 약관</span>
-									</a> 
-                                </li>
-                                <li>
-                                    <a href="https://github.com/Karbovanets/karbo-brand-media">
-										<span lang="en">Media kit</span>
-										<span lang="de">Medienkit (Werbematerial)</span>
-										<span lang="uk">Набір для медіа (рекламні матеріали)</span>
-										<span lang="pl">Zestaw prasowy (materiały promocyjne)</span>
-										<span lang="es">Equipo para medios (materiales de publicidad)</span>
-										<span lang="cn">宣传资料</span>
-										<span lang="jp">メディアキット（プロモーション資料）</span>
-										<span lang="kr">미디어 세트 (광고 자료)</span>
-									</a>
-                                </li>
-                            </ul>
-							
-							
-							<h4 class="mt-5">
-                                <span lang="en">Contact</span>
-                                <span lang="de">Kontakt</span>
-                                <span lang="uk">Зв'язок</span>
-                                <span lang="pl">Kontakt</span>
-                                <span lang="es">Contacto</span>
-                                <span lang="cn">接触</span>
-                                <span lang="jp">連絡先</span>
-                                <span lang="kr">접촉</span>
-                            </h4>
-                            <ul class="footer-contact">
-                                <li>
-                                    <p>dev@karbo.io</p>
-                                </li>
-                            </ul>
-							
-                        </div>
-                    </div>
-                    <div class="offset-xl-1 offset-lg-1 col-xl-3 col-lg-3 col-md-6">
-                        <div class="footer-widget mb-60 wow fadeInRight donate" data-wow-delay=".8s">
-							<h4>
-								<span lang="en">Donate</span>
-								<span lang="de">Spenden</span>
-								<span lang="uk">Допомога проєкту</span>
-								<span lang="pl">Darowizny</span>
-								<span lang="es">Donaciones</span>
-								<span lang="cn">捐款</span>
-								<span lang="jp">寄付</span>
-								<span lang="kr">기부</span>
-							</h4>
-							
-							<p class="mb-3">
-								<small>
-									Karbo was founded in 2016 as zero-premine, without ICO and for years at Karbo we sustain open source development, denying proposals to make dev tax, premine to some shady 'development fund' etc., which we believe will break Karbo's social contract.
+        <div class="footer-links">
+          <h3 class="footer-kicker">Contact</h3>
+          <ul>
+            <li><a href="mailto:dev@karbo.io">dev@karbo.io</a></li>
+          </ul>
+        </div>
+      </div>
 
-									Instead we rely on Community help and support to cover various expenses like hosting, domains etc.
-								</small>
-							</p>
-							
-							<div class="qrcode mb-2" id="qrcode_krb"></div>
-							
-							<small style="word-break: break-all;"> <a class="address_string" id="address_krb" href="karbowanec:Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3?label=Karbowanec%20Dev%20Fund">Kdev1L9V5ow3cdKNqDpLcFFxZCqu5W2GE9xMKewsB2pUXWxcXvJaUWHcSrHuZw91eYfQFzRtGfTemReSSMN4kE445i6Etb3</a></small>
-							
-                        </div>
-                    </div>
-                </div>
+      <div class="footer-bottom">
+        <div>&copy; 2016<script>new Date().getFullYear()>2016&&document.write("-"+new Date().getFullYear());</script> Electronic Karbovanets</div>
+        <div class="footer-legal">
+          <a href="privacy-policy.html"><span lang="en">Privacy policy</span></a>
+          <span>&middot;</span>
+          <a href="terms-and-conditions.html"><span lang="en">Terms and conditions</span></a>
+        </div>
+        <div class="ua-badge">
+          <div class="ua-flag"><div class="ua-flag-top"></div><div class="ua-flag-bot"></div></div>
+          Made in Ukraine
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const clearLoadingBlur = () => {
+      window.setTimeout(() => {
+        document.documentElement.classList.remove("is-loading");
+      }, 140);
+    };
 
-                <div class="copyright-area">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                             <div class="footer-social-links">
-                                <ul class="d-flex">
-                                    <li><a href="https://www.facebook.com/karbo.io"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/krbcoin"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="https://www.reddit.com/r/krb/"><i class="fab fa-reddit-alien"></i></a></li>
-                                    <li><a href="https://t.me/karbowanec/"><i class="fab fa-telegram-plane"></i></a></li>
-                                    <li><a href="https://github.com/Karbovanets/"><i class="fab fa-github-alt"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <p class="wow fadeInUp" data-wow-delay=".3s">&copy; 2016<script>new Date().getFullYear()>2016&&document.write("-"+new Date().getFullYear());</script> 
-								<span lang="en">Karbo</span>
-								<span lang="de">Karbo</span>
-								<span lang="uk">Карбованець</span>
-								<span lang="pl">Karbowaniec</span>
-								<span lang="es">Karbo</span>
-								<span lang="cn">卡博币</span>
-								<span lang="jp">カルボ</span>
-								<span lang="kr">카르보</span>
-							</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- ========================= footer end ========================= -->
+    if (document.readyState === "complete") {
+      clearLoadingBlur();
+    } else {
+      window.addEventListener("load", clearLoadingBlur, { once: true });
+    }
 
-        <!-- ========================= scroll-top ========================= -->
-        <a href="#home" class="scroll-top page-scroll" style="display: none;">
-            <i class="fas fa-long-arrow-alt-up"></i>
-        </a>
- 
-		<!-- ========================= JS here ========================= -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-        <script src="assets/js/count-up.min.js"></script>
-        <script src="assets/js/tiny-slider.js"></script>
-        <script src="assets/js/isotope.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/imagesloaded.min.js"></script>
-		<script src="assets/js/qrcode.js"></script>
-		<script src="assets/js/main.js"></script>
-    </body>
+    const header = document.querySelector(".site-header");
+    const setHeaderState = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 12);
+    };
+
+    setHeaderState();
+    window.addEventListener("scroll", setHeaderState, { passive: true });
+  </script>
+</body>
 </html>
