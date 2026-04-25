@@ -681,6 +681,99 @@
       max-width:760px;
     }
 
+    #values{
+      overflow:hidden;
+      padding:58px 0;
+    }
+
+    #values .container{
+      display:grid;
+      grid-template-columns:minmax(0, 920px) minmax(0, 1fr);
+      align-items:center;
+      column-gap:0;
+    }
+
+    #values .section-intro{
+      grid-column:1;
+      grid-row:1;
+      z-index:1;
+    }
+
+    .values-illustration{
+      grid-column:2;
+      grid-row:1;
+      justify-self:end;
+      align-self:center;
+      width:min(480px, 33vw);
+      margin-top:16px;
+      margin-right:clamp(18px, 2.2vw, 42px);
+      margin-left:clamp(-112px, -7vw, -34px);
+      pointer-events:none;
+    }
+
+    .values-venn{
+      display:block;
+      width:100%;
+      height:auto;
+      overflow:visible;
+    }
+
+    .values-venn .ring-dark{
+      fill:none;
+      stroke:rgba(24,58,143,.18);
+      stroke-width:2;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .values-venn .ring-light{
+      fill:rgba(255, 255, 255, 0);
+      stroke:rgba(127,176,255,.26);
+      stroke-width:1.7;
+      vector-effect:non-scaling-stroke;
+    }
+
+    #venn-a .ring-light{
+      fill:rgba(94,157,220,.03);
+      background-blend-mode: multiply;
+    }
+
+    #venn-b .ring-light{
+      fill:rgba(74,176,157,.03);
+      background-blend-mode: multiply;
+    }
+
+    #venn-c .ring-light{
+      fill:rgba(209,170,88,.03);
+      background-blend-mode: multiply;
+    }
+
+    .values-venn .ring-faint{
+      fill:none;
+      stroke:rgba(24,58,143,.075);
+      stroke-width:1.2;
+      vector-effect:non-scaling-stroke;
+      transform-box:fill-box;
+      transform-origin:center;
+      animation:ring-faint-spin 12s linear infinite;
+    }
+
+    .values-venn g .ring-faint:nth-child(4){
+      animation-duration:16s;
+      animation-direction:reverse;
+    }
+
+    #venn-a,
+    #venn-b,
+    #venn-c{
+      transform-box:fill-box;
+      transform-origin:center;
+      will-change:transform;
+    }
+
+    #venn-a{animation:rotate-a 11s linear infinite;}
+    #venn-b{animation:rotate-b 23s linear infinite reverse;}
+    #venn-c{animation:rotate-c 17s linear infinite;}
+
     .grid-3{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1093,9 +1186,43 @@
       to{transform:rotate(0deg) scaleX(1.07) scaleY(.95)}
     }
 
+    @keyframes rotate-a{
+      from{transform:rotate(0deg) scaleX(1.0012) scaleY(.9988)}
+      50%{transform:rotate(180deg) scaleX(.9991) scaleY(1.0009)}
+      to{transform:rotate(360deg) scaleX(1.0012) scaleY(.9988)}
+    }
+
+    @keyframes rotate-b{
+      from{transform:rotate(0deg) scaleX(1.0018) scaleY(.9982)}
+      50%{transform:rotate(180deg) scaleX(.999) scaleY(1.001)}
+      to{transform:rotate(360deg) scaleX(1.0018) scaleY(.9982)}
+    }
+
+    @keyframes rotate-c{
+      from{transform:rotate(0deg) scaleX(.9991) scaleY(1.0009)}
+      50%{transform:rotate(180deg) scaleX(1.0013) scaleY(.9987)}
+      to{transform:rotate(360deg) scaleX(.9991) scaleY(1.0009)}
+    }
+
+    @keyframes ring-faint-spin{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
+    }
+
     @media (max-width:1100px){
       .hero-inner,.grid-3,.method,.wallet-grid,.two-col{
         grid-template-columns:1fr;
+      }
+      #values .container{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .values-illustration{
+        grid-column:1;
+        grid-row:2;
+        justify-self:center;
+        width:min(100%, 420px);
+        margin:4px auto 0;
       }
       #spow .method{
         grid-template-columns:1fr;
@@ -1131,6 +1258,9 @@
     }
 
     @media (max-width:760px){
+      #values{
+        padding:48px 0;
+      }
       .container{
         width:min(calc(100% - 28px), var(--max));
       }
@@ -1216,6 +1346,17 @@
       .spow-highlight{
         max-width:none;
       }
+      #values .container{
+        min-height:auto;
+        gap:24px;
+      }
+      .values-illustration{
+        grid-column:1;
+        grid-row:2;
+        justify-self:center;
+        width:min(100%, 340px);
+        margin:0 auto;
+      }
       .footer{
         padding:54px 0 32px;
       }
@@ -1250,6 +1391,16 @@
         filter:none;
         opacity:1;
         transform:none;
+      }
+
+      #venn-a,
+      #venn-b,
+      #venn-c{
+        animation:none;
+      }
+
+      .values-venn .ring-faint{
+        animation:none;
       }
     }
   </style>
@@ -1288,7 +1439,7 @@
   </header>
 
   <main id="top">
-    <section class="hero" id="hero" data-binary="01010000 01100101 01110010 01111000 01100001 00100000 01110101 01101011 01110010 01100001 01110111 01101110 01110011 01101100 01101100 01100010 01101011 01100001 00100000 01101011 01110010 01101001 01110000 01110100 01101111 01110110 01100001 01101100 01111010 01110100 01100001 00101110 00100000 01000100 01100101 01100110 01100101 01101110 01110100 01110010 01100001 01101100 01101001 01111010 01101111 01110110 01100001 01101110 01101001 01101001 00100000 01100111 01110010 01101111 01110011 01101111 01110110 01101001 01101001 00100000 01101011 01100001 01110011 00100000 01101110 01100001 00100000 01000011 01110010 01111001 01110000 01110100 01101111 01001110 01101111 01110100 01100101 00101110">
+    <section class="hero" id="hero" data-binary="01010000 01100101 01110010 01111000 01100001 00100000 01110101 01101011 01110010 01100001 01110111 01101110 01110011 01101100 01101100 01100010 01101011 01100001 00100000 01101011 01110010 01101001 01110000 01110100 01101111 01110110 01100001 01101100 01111010 01110100 01100001 00101110 00100000 01000100 01100101 01100110 01100101 01101110 01110100 01110010 01100001 01101100 01101001 01111010 01101111 01110110 01100001 01101110 01101001 01101001 00100000 01100111 01110010 01101111 01110011 01101111 01110110 01101001 01101001 00100000 01101011 01100001 01110011 00100000 01101110 01100001 00100000 01000011 01110010 01111001 01110000 01110100 01101111 01001110 01101111 01110100 01100101 00101110 01010000 01100101 01110010 01111000 01100001 00100000 01110101 01101011 01110010 01100001 01110111 01101110 01110011 01101100 01101100 01100010 01101011 01100001 00100000 01101011 01110010 01101001 01110000 01110100 01101111 01110110 01100001 01101100 01111010 01110100 01100001 00101110 00100000 01000100 01100101 01100110 ">
       <div class="container hero-inner">
         <div class="hero-copy">
           <h1 data-i18n="hero.title">Karbo</h1>
@@ -1377,6 +1528,31 @@
             Those principles guide our design choices and development priorities, and they are more important to us
             than any specific feature or roadmap item.
           </p>
+        </div>
+
+        <div class="values-illustration" aria-hidden="true">
+          <svg class="values-venn" viewBox="132 42 456 416" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <g id="venn-a">
+              <ellipse class="ring-dark" cx="360" cy="170" rx="126.5" ry="125.2" />
+              <ellipse class="ring-light" cx="360" cy="170" rx="123.8" ry="121.6" />
+              <ellipse class="ring-faint" cx="360" cy="170" rx="136.5" ry="132.6" />
+              <ellipse class="ring-faint" cx="360" cy="170" rx="135.8" ry="130.1" />
+            </g>
+
+            <g id="venn-b">
+              <ellipse class="ring-light" cx="276" cy="315" rx="126.5" ry="125.2" />
+              <ellipse class="ring-dark" cx="276" cy="315" rx="123.8" ry="122.1" />
+              <ellipse class="ring-faint" cx="276" cy="315" rx="137.5" ry="133.6" />
+              <ellipse class="ring-faint" cx="276" cy="315" rx="138.8" ry="130.8" />
+            </g>
+
+            <g id="venn-c">
+              <ellipse class="ring-dark" cx="444" cy="315" rx="126.5" ry="125.2" />
+              <ellipse class="ring-light" cx="444" cy="315" rx="123.8" ry="121.9" />
+              <ellipse class="ring-faint" cx="444" cy="315" rx="138.5" ry="133.6" />
+              <ellipse class="ring-faint" cx="444" cy="315" rx="135.8" ry="130.8" />
+            </g>
+          </svg>
         </div>
       </div>
     </section>
