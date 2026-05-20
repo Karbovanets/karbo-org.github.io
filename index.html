@@ -906,7 +906,7 @@
 
     .wallet-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
       gap:22px;
       margin-top:26px;
     }
@@ -1212,6 +1212,9 @@
     @media (max-width:1100px){
       .hero-inner,.grid-3,.method,.two-col{
         grid-template-columns:1fr;
+      }
+      .wallet-grid{
+        grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       }
       #values .container{
         grid-template-columns:1fr;
